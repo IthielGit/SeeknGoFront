@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Header,Searchbar,Categorylist,Howto } from './container/';
-import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
+import {Navbar, Footer} from './components/index';
 
 import './App.css';
 

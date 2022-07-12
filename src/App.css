@@ -16,8 +16,23 @@
   background-attachment: fixed;
 }
 
+.app__bg-header {
+  background: url('./assets/bgHome.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
 .app__wrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.app__wrapper-header {
   justify-content: space-between;
   align-items: center;
 
@@ -52,16 +67,31 @@
   width: 80%;
 }
 
-.custom__button {
-  background-color: var(--color-crimson);
+.custom__button-white {
+  background-color: var(--color-whitesmoke);
     color: var(--color-black);
-    font-family: var(--font-base);
+    font-family: var(--font-alt);
     font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 28px;
     font-size: 16px;
     padding: 0.5rem 1.5rem;
-    border-radius: 1px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.custom__button-red {
+  background-color: var(--color-red);
+    color: var(--color-whitesmoke);
+    font-family: var(--font-alt);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 28px;
+    font-size: 16px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -83,7 +113,7 @@
   color: var(--color-black);
   font-weight: 400;
   letter-spacing: 0.04em;
-  text-transform: capitalize;
+  text-transform: none;
   line-height: 28px;
   font-size: 16px;
 }
