@@ -16,14 +16,14 @@ const Navbar = () => {
           <img src={images.logo} alt="app logo" className='navbar-logo'/>
         </div>
         <ul className="app__navbar-links">
-          <li className="p__roboto"> <a href='#home'>Accueil</a> </li>
-          <li className="p__roboto"> <a href='#about'>A propos de nous</a> </li>
-          <li className="p__roboto"> <a href='#contact'>Contact</a> </li>
+          <li className="p__inter"> <a href='#home'>Accueil</a> </li>
+          <li className="p__inter"> <a href='#about'>A propos de nous</a> </li>
+          <li className="p__inter"> <a href='#contact'>Contact</a> </li>
         </ul>
         <div className="app__navbar-login">
-          <a href='#login' className="p__roboto">Login / Register</a>
+          <a href='#login' className="p__inter">Se connecter</a>
           <div />
-          <a href='#/' className="p__roboto">Book table</a>
+          <a href='#/' className="p__inter">S'inscrire</a>
         </div>
         <div className='app__navbar-smallscreen'>
           <GiHamburgerMenu color="#0C0C0C" fontSize={27} onClick={() => {setToggleMenu(true)}}></GiHamburgerMenu>
@@ -32,9 +32,9 @@ const Navbar = () => {
           <div className='app__navbar-smallscreen_overlay flex__center slide-bottom'>  
             <AiOutlineClose fontSize={27} className="overlay__close" onClick={() => {setToggleMenu(false)}} />
             <ul className="app__navbar-smallscreen_links">
-            <li className="p__roboto"> <a href='#home'>Accueil</a> </li>
-          <li className="p__roboto"> <a href='#about'>A propos de nous</a> </li>
-          <li className="p__roboto"> <a href='#contact'>Contact</a> </li>
+            <li className="p__inter"> <a href='#home'>Accueil</a> </li>
+          <li className="p__inter"> <a href='#about'>A propos de nous</a> </li>
+          <li className="p__inter"> <a href='#contact'>Contact</a> </li>
             </ul>
           </div>
           )} 
