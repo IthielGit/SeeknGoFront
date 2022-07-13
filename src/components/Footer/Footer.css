@@ -1,0 +1,32 @@
+
+.app__footer-col_1 img{
+    margin-top: 10%;
+    width: 200px;
+}
+
+
+.app__footer-list{
+    display: flex;
+    flex-direction:column;
+
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    margin:0 0 0 10rem;
+    padding: 0;
+
+    list-style: none;
+}
+
+.app__footer-links{
+    display: flex;
+    flex-direction:column;
+
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    margin:0 0 0 12rem;
+    padding: 0;
+
+    list-style: none;
+}
