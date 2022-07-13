@@ -1,16 +1,18 @@
-.titlepage {
+.titlepage__dark {
     text-align: center;
     padding: 2% 0%;
 }
 
-.titlepage h2 {
+
+.titlepage__dark h2 {
     position: relative;
     font-size: 2rem;
-    color: #121212;
+    color: whitesmoke;
     line-height: 45px;
     margin: 0;
     padding-bottom: 0.7%;
 }
+
 
 
 h2::before {

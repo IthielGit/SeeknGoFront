@@ -12,7 +12,7 @@ function App() {
       <Navbar/>
       <Header/>
       <Categorylist/>
-      {/* <Howto/> */}
+      <Howto/>
       <Footer/>
     </div>
   );

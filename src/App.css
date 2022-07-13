@@ -23,6 +23,13 @@
   background-repeat: repeat;
   background-attachment: fixed;
 }
+.app__bg-dark {
+  background-color: #1B1B1B;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
 
 .app__wrapper {
   display: flex;

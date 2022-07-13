@@ -1,0 +1,29 @@
+
+.app__wrapper-howto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: line;
+    flex-wrap : wrap;
+}
+
+.howto__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.howto__img{
+    width: 25rem;
+}
+
+.app__header_h1-desc{
+    font-family: var(--font-alt);
+    font-size: 1.2rem;
+    text-align: center;
+    color: whitesmoke;
+    line-height: 2rem;
+    
+}
