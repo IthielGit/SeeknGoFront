@@ -1,0 +1,137 @@
+.signup_section .heading_container h2 {
+  text-align: center;
+  padding: 0 45px;
+}
+
+.signup_section .box {
+  background-color: var(--color-whitesmoke);
+  margin-bottom: 5%;
+  border-radius: 5px;
+}
+
+.signup_section .row {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.signup_section .detail-box {
+  width: 250px;
+}
+
+.signup_section .detail-box p {
+  margin-top: 5px;
+}
+
+.signup_section .signup-form {
+  padding: 45px 0;
+  border-radius: 5px;
+}
+
+
+.signup_section .signup-form input {
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+
+.signup_section .signup-form .app__signup_inputs__inline input:first-child{
+  margin-right: 2rem;
+}
+
+fieldset{
+  border: solid 1px #737272;
+}
+
+
+.app__signup_inputs__inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.signup_section .signup-form .form-select {
+  border: none;
+  outline: none;
+  background-color: var(--color-white);
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+
+.app__signup_inputs__inline .signup__input {
+  padding: 3% 3%;
+}
+
+.signup_section .signup-form input.input_message {
+  height: 105px;
+  border-radius: 5px;
+}
+
+.signup_section .signup-form input::-webkit-input-placeholder {
+  color: #737272;
+}
+
+.signup_section .signup-form input:-ms-input-placeholder {
+  color: #737272;
+}
+
+.signup_section .signup-form input::-ms-input-placeholder {
+  color: #737272;
+}
+
+.signup_section .signup-form input::placeholder {
+  color: #737272;
+}
+
+.signup_section .signup-form button {
+  padding: 10px 65px;
+}
+
+.signup_section .signup-form button:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+.signup_section .map_img-box {
+  width: 80%;
+  margin: 25px auto 0 auto;
+}
+
+.signup_section .map_img-box img {
+  width: 100%;
+}
+
+
+@media screen and (max-width:2000px) {}
+
+@media screen and (max-width:1150px) {
+  .signup_section .signup-form .app__signup_inputs__inline input:first-child{
+    margin-right: 0;
+  }
+  
+  .app__signup_inputs__inline {
+    flex-wrap: wrap;
+  }
+}
+
+/*Mobile phone*/
+@media screen and (max-width:650px) {
+  .signup_section .signup-form .app__signup_inputs__inline input:first-child{
+    margin-right: 0;
+  }
+  
+  .app__signup_inputs__inline {
+
+    flex-wrap: wrap;
+
+  }
+}
