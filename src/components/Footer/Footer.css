@@ -11,58 +11,6 @@
     padding-bottom: 60px;
 }
 
-.newslatter {
-    padding-bottom: 60px;
-}
-
-.newslatter h4::before {
-    position: absolute;
-    content: "";
-    background-color: var(--color-black);
-    width: 76px;
-    height: 3px;
-    bottom: 0px;
-}
-
-.bottom_form {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 55px;
-}
-
-.bottom_form .enter {
-    border: inherit;
-    padding: 0px 19px;
-    width: 64%;
-    height: 61px;
-    background: var(--color-black);
-    color: #d5d2d2;
-    font-size: 20px;
-    font-weight: 300;
-    float: left;
-    margin-bottom: 20px;
-}
-
-.sub_btn {
-    font-size: 17px;
-    transition: ease-in all 0.5s;
-    background-color: #000;
-    color: var(--color-black);
-    padding: 5px 0px;
-    max-width: 270px;
-    width: 100%;
-    font-weight: normal;
-    text-transform: uppercase;
-    height: 61px;
-    border: var(--color-black) solid 8px;
-}
-
-.sub_btn:hover {
-    background-color: #ff3556;
-    transition: ease-in all 0.5s;
-    color: var(--color-black);
-}
-
 .footer h3 {
     font-weight: 600;
     font-size: 20px;
@@ -74,11 +22,17 @@
     text-transform: uppercase;
 }
 
+ul.conta{
+    padding: 0;
+    list-style: none;
+}
+
 ul.conta li {
     color: var(--color-black);
     text-align: left;
     padding-bottom: 20px;
     font-size: 16px;
+    
 }
 
 ul.conta li i {
@@ -89,6 +43,12 @@ ul.conta li i {
 
 ul.conta li a {
     color: var(--color-black);
+}
+
+
+ul.link_menu{
+    padding: 0;
+    list-style: none;
 }
 
 ul.link_menu li {
@@ -109,7 +69,7 @@ ul.link_menu li a {
 }
 
 ul.link_menu li a:hover {
-    color: #f4a111;
+    color: var(--color-red);
 }
 
 .copyright {
@@ -134,7 +94,6 @@ ul.link_menu li a:hover {
     text-align: center;
     padding-top: 26px;
     font-weight: normal;
-    padding-bottom: 20px;
 }
 
 .copyright a {

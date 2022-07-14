@@ -32,7 +32,7 @@ function Howto() {
           </div>
           <div className="howto__container">
             <img src={images.blob5} alt="blob point" className='howto__img'></img>
-            <h1 className="app__header_h1-desc">Envoyervotre demande<br></br> de réservation</h1>
+            <h1 className="app__header_h1-desc">Envoyer votre demande<br></br> de réservation</h1>
           </div>
           <div className="howto__container">
             <img src={images.blob6} alt="blob point" className='howto__img'></img>

@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdb-react-ui-kit";
+import { Link } from "react-router-dom";
 
 import { ImLocation2 } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -21,27 +21,35 @@ function Footer() {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <h3>menu LINKS</h3>
+              <h3>Liens utiles</h3>
               <ul className="link_menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html"> About</a></li>
-                <li><a href="product.html">Our Product</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+              <li className="p__inter"> <Link to="/">Accueil</Link> </li>
+          <li className="p__inter"> <Link to='/about'>A propos de nous</Link> </li>
+          <li className="p__inter"> <Link to='/contact'>Contact</Link> </li>
               </ul>
             </div>
             <div className=" col-md-3">
-              <h3>TOP food</h3>
+              <h3>SeeknGo</h3>
               <p className="many">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                LE MOYEN LE PLUS SIMPLE DE TROUVER UNE ACTIVITÉ DE LOISIR À
+                FAIRE À COTÉ DE CHEZ VOUS
               </p>
             </div>
             <div className="col-lg-3 offset-mdlg-2     col-md-4 offset-md-1">
               <h3>Contact </h3>
               <ul className="conta">
-                <li><i className="fa fa-map-marker" aria-hidden="true"></i> Location</li>
-                <li> <i className="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
-                <li><i className="fa fa-mobile" aria-hidden="true"></i> Call : +01 1234567890</li>
+                <li>
+                  {" "}
+                  <ImLocation2 /> Faravohitra Antananarivo, Madagascar
+                </li>
+                <li>
+                  {" "}
+                  <MdEmail /> contact@seekng.mg
+                </li>
+                <li>
+                  {" "}
+                  <BsFillTelephoneFill /> + 261 22 234 56
+                </li>
               </ul>
             </div>
           </div>
@@ -50,7 +58,7 @@ function Footer() {
           <div className="container">
             <div className="row">
               <div className="col-md-10 offset-md-1">
-                <p>© 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a></p>
+                <p>© 2022 All Rights Reserved. SeeknGo</p>
               </div>
             </div>
           </div>

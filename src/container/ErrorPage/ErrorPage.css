@@ -1,0 +1,11 @@
+.iconWarning{
+    font-size: 7.5rem;
+    color: var(--color-red);
+}
+
+.display-1{
+    font-size: calc(1.625rem + 4.5vw);
+    font-weight: 800;
+    line-height: 1.2;
+    line-height: 1.2;
+}
