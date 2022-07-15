@@ -21,7 +21,7 @@ function SignUp() {
   return (
     <div className="container" id="signupForm">
       <SubHeading title="Inscrivez-vous" />
-
+      
       <section className="signup_section layout_padding-bottom layout_padding2-top">
         <div className="container">
           <div className="box layout_padding2">

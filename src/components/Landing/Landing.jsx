@@ -1,6 +1,6 @@
 import React from "react";
-import { Header, Categorylist, Howto } from "../../container/";
-import { Navbar, Footer } from "../../components/";
+import { Header, Categorylist, Howto } from "../../container";
+import { Navbar, Footer } from "..";
 
 function Landing() {
   return (

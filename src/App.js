@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { Header, Categorylist, Howto, Contact, About, ErrorPage, Login, SignUp } from "./container/";
+import { Contact, About, ErrorPage, Login, SignUp } from "./container/";
 import { Navbar, Footer, Landing } from "./components/";
 
 import "./App.css";
