@@ -28,6 +28,27 @@ const category = [
   
 
 ];
+const provinces = [
+  {
+    title: 'Antananarivo',
+  },
+    {
+    title: 'Antsiranana',
+  },
+    {
+    title: 'Mahajanga',
+  },
+    {
+    title: 'Toliary',
+  },
+    {
+    title: 'Fianarantsoa',
+  },
+    {
+    title: 'Toamasina',
+  },
+  
+];
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {category}
+export default {category, provinces}

@@ -1,5 +1,6 @@
 import React from "react";
 import { BsSearch } from 'react-icons/bs';
+import { data } from '../../constants'
 
 import "./Searchbar.css";
 
@@ -18,7 +19,9 @@ function Searchbar() {
         <li>
           <select className="form-select" id="floatingSelectGrid">
             <option>Province</option>
-            <option value="1">province.value</option>
+            {data.provinces.map((province, index)=>(
+              <option key={index} value={province.title}>{province.title}</option>
+            ))}
           </select>
         </li>
         <li>
