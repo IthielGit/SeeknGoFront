@@ -22,7 +22,7 @@ function Searchbar() {
           </select>
         </li>
         <li>
-          <button type="button" className="custom__button-red">
+          <button type="button" className="custom__button_search-red">
             <BsSearch fontSize={20}></BsSearch>
           </button>
         </li>
