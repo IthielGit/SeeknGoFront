@@ -16,7 +16,6 @@ function ActivitySingle() {
         <div className="activityWrapper">
           <h1 className="activityTitle">COURS DE YOGA BY SOA</h1>
 
-
           <div className="activityPlanningAndImages">
             <div className="activityImagesContainer">
               {data.photoSample.map((photo, index) => (
@@ -61,7 +60,7 @@ function ActivitySingle() {
               </p>
             </div>
             <div className="activityDetailsPrice">
-              <h1>Perfect for a 9-night stay!</h1>
+              <SubHeading title="Les tarifs"/>
               <span>
                 Located in the real heart of Krakow, this property has an
                 excellent location score of 9.8!

@@ -1,8 +1,15 @@
 import React from 'react'
 import { ImLocation2 } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 
 import './SearchItem.css'
 function SearchItem() {
+
+    const navigate = useNavigate();
+
+    const handleList = ()=>{
+        navigate("/activity/azerty");
+    }
     return (
         <div className="searchItem">
             <img
@@ -32,7 +39,7 @@ function SearchItem() {
                     <span className="siTaxOp">A partir de </span>
                     <span className="siPrice">24 000Ar</span>
 
-                    <button className="siCheckButton">Réserver</button>
+                    <button className="siCheckButton" onClick={handleList}>Plus de détails</button>
                 </div>
             </div>
         </div>
