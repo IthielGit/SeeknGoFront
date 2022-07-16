@@ -58,7 +58,7 @@
 
 
 .activityImagesContainer {
-    flex: 2;
+    flex: 8;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -78,7 +78,6 @@
 }
 
 .activityResume {
-
     padding: 2%;
     width: 100%;
     display: flex;
@@ -88,10 +87,18 @@
 }
 
 .activityPlanning {
-    flex: 2;
+    flex: 3;
     width: 100%;
     border-radius: 5px;
     overflow: hidden;
+    border: 1px solid lightgray;
+}
+
+.activityTitleSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
 }
 
 .activityDetails {
@@ -109,40 +116,25 @@
 .activityDesc {
     font-size: 14px;
     margin-top: 20px;
+    text-align: justify;
 }
 
 .activityDetailsPrice {
     flex: 2;
-    background-color: #ffebeb67;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-   
     border-radius: 5px;
     overflow: hidden;
 }
 
-.activityDetailsPrice>h1 {
-    font-size: 18px;
-    color: #555;
-}
 
-.activityDetailsPrice>span {
-    font-size: 14px;
-}
-
-.activityDetailsPrice>h3 {
-    font-weight: 300;
-}
-
-.activityDetailsPrice>button {
+.button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     border: none;
-    padding: 10px 20px;
-    background-color: #0071c2;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: none;
+    color: none;
 }

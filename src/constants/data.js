@@ -25,9 +25,30 @@ const category = [
     title: 'Ateliers',
     imgUrl: images.ateliers,
   },
-  
+];
+
+
+const tarifs = [
+  {
+    partenaire:'Yoga Soa',
+    title: 'A domicile',
+    prix : 22000
+  },
+  {
+    partenaire:'Yoga Soa',
+    title: 'En salle',
+    prix : 24500
+  },
+  {
+    partenaire:'Yoga Soa',
+    title: 'En visio',
+    prix : 20000
+  },
+
+
 
 ];
+
 const provinces = [
   {
     title: 'Antananarivo',
@@ -67,9 +88,9 @@ const photoSample = [
     src: "https://images.unsplash.com/photo-1557512724-931547195611?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
-    src: "https://images.unsplash.com/photo-1593164842249-d74fc06dae05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
+    src: "https://images.unsplash.com/photo-1616699002805-0741e1e4a9c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
   },
 ];
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {category, provinces, photoSample}
+export default {category, provinces, photoSample,tarifs}

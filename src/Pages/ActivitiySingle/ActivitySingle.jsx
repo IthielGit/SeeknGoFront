@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Footer, Navbar, SubHeading } from '../../components'
 import { ImLocation2 } from "react-icons/im";
 import { MdOutlineTimer } from "react-icons/md";
@@ -41,7 +41,11 @@ function ActivitySingle() {
               </div>
             </div>
             <div className="activityPlanning">
-
+              <div className="activityDetailsTexts">
+                <div className="activityTitleSection">
+                  <h1 className="activityTitle">Votre ticket</h1>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -60,15 +64,33 @@ function ActivitySingle() {
               </p>
             </div>
             <div className="activityDetailsPrice">
-              <SubHeading title="Les tarifs"/>
-              <span>
-                Located in the real heart of Krakow, this property has an
-                excellent location score of 9.8!
-              </span>
-              <h3>
-                <b>$945</b> (9 nights)
-              </h3>
-              <button>Réserver maintenant</button>
+              <h1 className="activityTitle">Les Tarifs</h1>
+              <div className="tarifContainer">
+                <table class="table table-striped">
+                  <tbody>
+                    {data.tarifs.map((tarif, index) => (
+                      <tr key={index}>
+                        <th scope="row">{tarif.title}</th>
+                        <td>
+                          <select>
+                            <option>0</option>
+                            <option value={1}>1</option>
+                            <option value={2}>2</option>
+                            <option value={3}>3</option>
+                            <option value={4}>4</option>
+                            <option value={5}>5</option>
+                            <option value={6}>6</option>
+                          </select>
+                        </td>
+                        <td>{tarif.prix}</td>
+                        <td>Ariary</td>
+                      </tr>
+
+                    ))}
+
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
