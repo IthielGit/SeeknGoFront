@@ -25,8 +25,8 @@ function Searchbar({type}) {
 
 
   return (
-    <div className={type === "list" ? ".app__wrapper_searchbar-list_mode":"app__wrapper_searchbar"}>
-      <ul className={type === "list" ? "app__header_searchbar-list_mode":"app__header_searchbar"}>
+    <div className="app__wrapper_searchbar">
+      <ul className="app__header_searchbar">
         <li>
           <input
             type="text"

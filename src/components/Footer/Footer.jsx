@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 import { ImLocation2 } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import { MdEmail, MdAddLocationAlt } from "react-icons/md";
-
-import { images } from "../../constants";
+import { MdEmail} from "react-icons/md";
 
 import "./Footer.css";
 

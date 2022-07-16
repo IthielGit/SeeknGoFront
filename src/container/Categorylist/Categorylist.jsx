@@ -14,6 +14,9 @@ const CategoryCard = ({ category: { title, imgUrl } }) => (
   </div>
 );
 
+
+
+
 function Categorylist() {
   return (
     <div className="app__wrapper" id="categoryList">

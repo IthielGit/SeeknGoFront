@@ -1,0 +1,141 @@
+.activityContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.activityWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.activityTitle {
+    font-size: 1.5rem;
+    font-family: var(--font-base);
+}
+
+.activityLocationDuration {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.LocationDurationItem {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.IconSingle {
+    font-size: 1.3rem;
+    color: var(--color-red);
+}
+
+.singleCategory {
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
+    opacity: 0.8;
+}
+
+.singleCategory>hr {
+    margin: 0;
+}
+
+.activityPlanningAndImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+
+.activityImagesContainer {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.activityImgWrapper {
+    width: 33%;
+    border-radius: 5px;
+}
+
+.activityImg {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.activityResume {
+
+    padding: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(252, 226, 227, 39%);
+
+}
+
+.activityPlanning {
+    flex: 2;
+    background-color: #0071c2;
+    width: 100%;
+}
+
+.activityDetails {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    margin-top: 20px;
+}
+
+.activityDetailsTexts {
+    flex: 3;
+}
+
+.activityDesc {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.activityDetailsPrice {
+    flex: 2;
+    background-color: #ebf3ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activityDetailsPrice>h1 {
+    font-size: 18px;
+    color: #555;
+}
+
+.activityDetailsPrice>span {
+    font-size: 14px;
+}
+
+.activityDetailsPrice>h3 {
+    font-weight: 300;
+}
+
+.activityDetailsPrice>button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
