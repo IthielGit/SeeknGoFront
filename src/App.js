@@ -1,27 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Contact, About, ErrorPage, Login, SignUp } from "./container/";
-import { Navbar, Footer, Landing } from "./components/";
 
 import "./App.css";
+import { ActivitiesList, HomeMain } from "./Pages";
+
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <BrowserRouter>
 
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUp} />
+      <Routes>
+        <Route path="/" element={<HomeMain />} />
+        <Route path="/activities" element={<ActivitiesList />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route component={ErrorPage} />
-      </Switch> 
+      </Routes>
 
-      <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 

@@ -1,6 +1,7 @@
-import Home__main from './Home__main/Home__main';
-
+import HomeMain from './HomeMain/HomeMain.jsx';
+import ActivitiesList from './ActivitiesList/ActivitiesList.jsx';
 
 export {
-Home__main,
+HomeMain,
+ActivitiesList,
 };
