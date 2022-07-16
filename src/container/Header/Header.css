@@ -1,4 +1,19 @@
-.app__header-h1{
+.app__header {
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 2rem 0rem;
+    min-height: 100vh;
+}
+
+.list_mode {
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0rem;
+}
+
+
+.app__header-h1 {
     font-family: var(--font-base);
     color: var(--color-white);
     letter-spacing: 0.04em;
@@ -8,8 +23,8 @@
     text-align: center;
 }
 
-.header__p{
+
+.header__p {
     line-height: 3rem;
     text-align: center;
 }
-
