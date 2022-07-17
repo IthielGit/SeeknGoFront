@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Footer, Navbar, SubHeading } from '../../components'
 import { ImLocation2 } from "react-icons/im";
 import { MdOutlineTimer } from "react-icons/md";
@@ -9,10 +10,18 @@ import './ActivitySingle.css'
 function ActivitySingle() {
   let listPrices = [];
   // eslint-disable-next-line no-unused-vars
-  let priceToArray = data.tarifs.forEach((item) => {listPrices.push(item.prix);}
-    )
+  let priceToArray = data.tarifs.forEach((item) => { listPrices.push(item.prix); }
+  )
   let minPrice = Math.min(...listPrices);
-  const minPriceAriary = minPrice.toLocaleString('fr-FR',{style:'currency', currency:'MGA'});
+  const minPriceAriary = minPrice.toLocaleString('fr-FR', { style: 'currency', currency: 'MGA' });
+
+  const navigate = useNavigate();
+
+  const handleBookSession = () => {
+    navigate("/activity/:id/reservation");
+  }
+
+
 
   return (
     <div>
@@ -55,7 +64,7 @@ function ActivitySingle() {
                   <p>Par personne</p>
                 </div>
               </div>
-              <button>Réserver une session</button>
+              <button onClick={handleBookSession}>Réserver une session</button>
             </div>
           </div>
 
