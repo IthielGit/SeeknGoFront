@@ -27,20 +27,23 @@ const category = [
   },
 ];
 
-
+//Tarifs de SOA => changé en fetch dans le backend par activity id 
 const tarifs = [
   {
     partenaire:'Yoga Soa',
+    location:'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
     title: 'A domicile',
     prix : 22000
   },
   {
     partenaire:'Yoga Soa',
+    location:'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
     title: 'En salle',
     prix : 24500
   },
   {
     partenaire:'Yoga Soa',
+    location:'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
     title: 'En visio',
     prix : 20000
   },

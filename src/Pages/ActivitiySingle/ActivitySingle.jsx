@@ -7,6 +7,13 @@ import { data } from '../../constants';
 import './ActivitySingle.css'
 
 function ActivitySingle() {
+  let listPrices = [];
+  // eslint-disable-next-line no-unused-vars
+  let priceToArray = data.tarifs.forEach((item) => {listPrices.push(item.prix);}
+    )
+  let minPrice = Math.min(...listPrices);
+  const minPriceAriary = minPrice.toLocaleString('fr-FR',{style:'currency', currency:'MGA'});
+
   return (
     <div>
       <Navbar />
@@ -43,9 +50,12 @@ function ActivitySingle() {
             <div className="activityPlanning">
               <div className="activityDetailsTexts">
                 <div className="activityTitleSection">
-                  <h1 className="activityTitle">Votre ticket</h1>
+                  <p>À partir de</p>
+                  <h3 className="minPriceMGA"> {minPriceAriary}</h3>
+                  <p>Par personne</p>
                 </div>
               </div>
+              <button>Réserver une session</button>
             </div>
           </div>
 
@@ -71,7 +81,7 @@ function ActivitySingle() {
                     {data.tarifs.map((tarif, index) => (
                       <tr key={index}>
                         <th scope="row">{tarif.title}</th>
-                        <td>
+                        {/* <td>
                           <select>
                             <option>0</option>
                             <option value={1}>1</option>
@@ -81,7 +91,7 @@ function ActivitySingle() {
                             <option value={5}>5</option>
                             <option value={6}>6</option>
                           </select>
-                        </td>
+                        </td> */}
                         <td>{tarif.prix}</td>
                         <td>Ariary</td>
                       </tr>
