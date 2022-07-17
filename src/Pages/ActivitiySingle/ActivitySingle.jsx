@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Footer, Navbar, SubHeading } from '../../components'
 import { ImLocation2 } from "react-icons/im";
@@ -56,6 +56,7 @@ function ActivitySingle() {
                 </div>
               </div>
             </div>
+
             <div className="activityPlanning">
               <div className="activityDetailsTexts">
                 <div className="activityTitleSection">
@@ -82,6 +83,7 @@ function ActivitySingle() {
                 <br></br>Le Core Power : Ce yoga multidisciplinaire vous aidera à renforcer tous les muscles de votre corps.
               </p>
             </div>
+
             <div className="activityDetailsPrice">
               <h1 className="activityTitle">Les Tarifs</h1>
               <div className="tarifContainer">
@@ -101,10 +103,8 @@ function ActivitySingle() {
                             <option value={6}>6</option>
                           </select>
                         </td> */}
-                        <td>{tarif.prix}</td>
-                        <td>Ariary</td>
+                        <td>{tarif.prix.toLocaleString('fr-FR', { style: 'currency', currency: 'MGA' })}</td>
                       </tr>
-
                     ))}
 
                   </tbody>

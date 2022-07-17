@@ -104,7 +104,6 @@
     border: none;
     outline: none;
     cursor: pointer;
-    outline: none;
     text-transform: uppercase;
     display: inline-block;    -webkit-transition: all .3s;
     transition: all .3s;

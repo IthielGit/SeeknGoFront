@@ -1,0 +1,101 @@
+.bookingContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.bookingWrapper{
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* PROGRESS BAR */
+.progressbarSection {
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  margin-bottom: 50px;
+  padding: 0 2.5%;
+}
+
+.progressbarSection div {
+  width: 33.3%;
+  height: 100%;
+  background-color: #1c826a;
+  padding: 0 2%;
+}
+
+.progressbarSection .stepDiv{
+  /* background-color: blue; */
+  padding-top: 1rem;
+  font-size: large;
+
+}
+
+
+.componentStepSection_Footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.componentStepSection_Footer>button {
+  background-color: var(--color-red);
+    color: var(--color-whitesmoke);
+    font-family: var(--font-alt);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    margin-left: 2.5%;
+}
+.componentStepSection_Footer>button[disabled] {
+  background-color: var(--color-grey);
+    color: var(--color-whitesmoke);
+    font-family: var(--font-alt);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor:not-allowed;
+    text-transform: uppercase;
+    display: inline-block;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    margin-left: 2.5%;
+    text-align: center;
+}
+
+
+@media screen and (max-width:2000px){
+
+}
+
+@media screen and (max-width:1150px){
+  .bookingContainer{
+    margin: 0 2%;
+  }
+}
+
+/*Mobile phone*/
+@media screen and (max-width:650px){
+  .bookingContainer{
+    margin: 0 2%;
+  }
+}
+ 
