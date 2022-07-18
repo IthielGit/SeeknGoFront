@@ -13,6 +13,7 @@ function PriceOptions() {
   let priceToArray = data.tarifs.forEach((item) => { listPrices.push(item.prix); }
   )
   let minPrice = Math.min(...listPrices);
+  // eslint-disable-next-line no-unused-vars
   const minPriceAriary = minPrice.toLocaleString('fr-FR', { style: 'currency', currency: 'MGA' });
 
 

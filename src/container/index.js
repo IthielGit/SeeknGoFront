@@ -7,7 +7,7 @@ import Contact from './Contact/Contact';
 import ErrorPage from './ErrorPage/ErrorPage';
 import SignUp from './SignUp/SignUp';
 import Login from './Login/Login';
-import PriceOptions from './PriceOptions/PriceOptions';
+import PriceOptions from "./PriceOptions/PriceOptions";
 import ChooseDate from './ChooseDate/ChooseDate';
 import ValidPersonalInfo from './ValidPersonalInfo/ValidPersonalInfo';
 
