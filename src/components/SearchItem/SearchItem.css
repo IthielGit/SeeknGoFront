@@ -107,6 +107,9 @@
     border-radius: 5px;
 }
 
+button.siCheckButton:hover {
+    background-color: #0071c2cc;
+}
 
 
 /*Mobile phone*/

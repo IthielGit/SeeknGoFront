@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { useNavigate } from 'react-router-dom';
 // import { Footer, Navbar, SubHeading } from '../../components'
 import { ImLocation2 } from "react-icons/im";
@@ -8,6 +8,10 @@ import { data } from '../../constants';
 
 import './PriceOptions.css'
 function PriceOptions() {
+
+  const [paxNumber, setPaxNumber] = useState(null);
+
+
   let listPrices = [];
   // eslint-disable-next-line no-unused-vars
   let priceToArray = data.tarifs.forEach((item) => { listPrices.push(item.prix); }
@@ -85,7 +89,7 @@ function PriceOptions() {
                     <td>{tarif.prix.toLocaleString('fr-FR', { style: 'currency', currency: 'MGA' })}</td>
                     <td> x </td>
                     <td>
-                      <select>
+                      <select name="paxNumber" id="paxNumber" onChange={(e) => setPaxNumber(e.target.value)}>
                         <option>0</option>
                         <option value={1}>1</option>
                         <option value={2}>2</option>
@@ -93,8 +97,13 @@ function PriceOptions() {
                         <option value={4}>4</option>
                         <option value={5}>5</option>
                         <option value={6}>6</option>
+                        <option value={7}>7</option>
+                        <option value={8}>8</option>
+                        <option value={9}>9</option>
+                        <option value={10}>10</option>
                       </select>
                     </td>
+                    <td>{tarif.prix * paxNumber}</td>
                   </tr>
                 ))}
 

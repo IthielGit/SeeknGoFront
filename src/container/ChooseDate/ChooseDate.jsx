@@ -12,9 +12,7 @@ import './ChooseDate.css';
 
 function ChooseDate() {
   registerLocale("fr", fr);
-  const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
-  const [time, setTime] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
 
@@ -56,7 +54,7 @@ function ChooseDate() {
                   <MdDateRange className='IconSingle' />
                   <p className="ticketDate">{selectedDate}</p>
                   <MdOutlineTimer className='IconSingle__DateTime' />
-                  <p className="ticketDate">00:00</p>
+                  <p className="ticketDate">{selectedTime}</p>
                 </div>
               }
 
@@ -97,6 +95,16 @@ function ChooseDate() {
               highlightDates={[new Date('2022-07-22'), new Date('2022-07-25')]}
               inline
             />
+            <div className="datePickerLegend">
+              <span className="datePickerLegend__Items">
+                <div></div>
+                <p>Dates disponibles</p>
+              </span>
+              <span className="datePickerLegend__Items">
+                <div className="datePickerLegend__divIndispo"></div>
+                <p>Dates indisponibles</p>
+              </span>
+            </div>
           </div>
         </div>
 
@@ -106,10 +114,18 @@ function ChooseDate() {
           </div>
           <div className="timeButtonSection">
             {data.times
-            .filter((dt)=>dt.date.includes(selectedDate))
-            .map((time, index)=>(
-            <label key={index} className='buttonTime' htmlFor="">{time.hour}</label>
-            ))}
+              .filter((dt) => dt.date.includes(selectedDate))
+              .map((time, index) => (
+                <label key={index} class="container timeLabelRadio">
+                  <input
+                    type="radio"
+                    name="radioTime"
+                    value={time.hour}
+                    checked={time.hour === selectedTime}
+                    onChange={(e) => (setSelectedTime(e.target.value))} />
+                  <span className="timeCheckmark">{time.hour}</span>
+                </label>
+              ))}
           </div>
         </div>
       </div>

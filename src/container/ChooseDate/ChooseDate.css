@@ -14,6 +14,45 @@
     font-weight: 700;
 }
 
+/* label test START */
+.timeLabelRadio{
+    position: relative;
+}
+
+        /* hide default radio btn */
+.timeLabelRadio input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.timeCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3rem 1.3rem;
+    background-color: #fef4f4;
+    border-radius: 5px;
+  }
+
+        /* On mouse-over, add a grey background color */
+.timeLabelRadio:hover input ~ .timeCheckmark {
+    background-color: #ccc;
+  }
+
+  .timeLabelRadio input:checked ~ .timeCheckmark {
+    background-color: #ce2127;
+  }
+
+  .timeLabelRadio input:checked ~ .timeCheckmark:hover {
+    color: #fff;
+  }
+
+/* label test END */
+
 .ticketDatetime {
     display: flex;
     flex-direction: row;
@@ -212,9 +251,13 @@
 
 .datePickerSection {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 1rem 0;
 }
+
+/* datepicker-START */
 
 .react-datepicker {
     font-family: "Helvetica Neue", helvetica, arial, sans-serif;
@@ -279,6 +322,46 @@
     color: rgb(255, 255, 255);
 }
 
+/* datePicker---End */
+
+
+/* calendar legend start */
+.datePickerLegend{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    opacity: 0.85;
+}
+
+.datePickerLegend__Items{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.datePickerLegend>span>div{
+    background-color: #219D80;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.datePickerLegend>span>p{
+    margin: 0;
+    margin-left: 2px;
+    font-size: 0.8rem;
+}
+
+.datePickerLegend>span>div.datePickerLegend__divIndispo{
+    background-color: #ce2127;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+}
+
+/* calendar legend end */
+
 .selectTime {
     flex: 2;
 
@@ -289,6 +372,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    margin-bottom: 2rem;
 }
 
 .buttonTime {
@@ -321,7 +405,14 @@
 @media screen and (max-width:1150px) {
     .chooseDateTicketAndImages {
         flex-direction: column;
+    }
 
+    .chooseDateDetails{
+        flex-direction: column;
+    }
+
+    .timeButtonSection {
+        padding: 2rem 5rem;
     }
 }
 
