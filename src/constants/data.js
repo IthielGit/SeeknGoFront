@@ -30,22 +30,22 @@ const category = [
 //Tarifs de SOA => changé en fetch dans le backend par activity id 
 const tarifs = [
   {
-    partenaire:'Yoga Soa',
-    location:'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
+    partenaire: 'Yoga Soa',
+    location: 'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
     title: 'A domicile',
-    prix : 22000
+    prix: 22000
   },
   {
-    partenaire:'Yoga Soa',
-    location:'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
+    partenaire: 'Yoga Soa',
+    location: 'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
     title: 'En salle',
-    prix : 24500
+    prix: 24500
   },
   {
-    partenaire:'Yoga Soa',
-    location:'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
+    partenaire: 'Yoga Soa',
+    location: 'Lalana Andrianaivoravelona Joseph Ampefiloha Antananarivo, Madagascar 101',
     title: 'En visio',
-    prix : 20000
+    prix: 20000
   },
 
 
@@ -56,22 +56,41 @@ const provinces = [
   {
     title: 'Antananarivo',
   },
-    {
+  {
     title: 'Antsiranana',
   },
-    {
+  {
     title: 'Mahajanga',
   },
-    {
+  {
     title: 'Toliary',
   },
-    {
+  {
     title: 'Fianarantsoa',
   },
-    {
+  {
     title: 'Toamasina',
   },
-  
+
+];
+const times = [
+  {
+    date: '22/07/2022',
+    hour: '15:30' ,
+  },
+  {
+    date: '22/07/2022',
+    hour: '20:30' ,
+  },
+  {
+    date: '22/07/2022',
+    hour: '22:30' ,
+  },  
+  {
+    date: '25/07/2022',
+    hour: '09:30' ,
+  },
+
 ];
 
 const photoSample = [
@@ -96,4 +115,4 @@ const photoSample = [
 ];
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {category, provinces, photoSample,tarifs}
+export default { category, provinces, photoSample, tarifs, times }

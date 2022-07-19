@@ -21,6 +21,12 @@
 }
 
 
+.IconSingle__DateTime {
+    font-size: 1.3rem;
+    color: var(--color-red);
+    margin-left: 2rem;
+}
+
 .ticketDate {
     margin: 0;
 }

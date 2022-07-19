@@ -14,6 +14,8 @@ function ChooseDate() {
   registerLocale("fr", fr);
   const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
+  const [time, setTime] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
 
 
   return (
@@ -48,12 +50,14 @@ function ChooseDate() {
           <div className="chooseDateResumeSection">
             <div className="chooseDateTitleSection">
               <h3 className="ticketTitle">COURS DE YOGA BY SOA</h3>
+
               {selectedDate &&
                 <div className="ticketDatetime">
                   <MdDateRange className='IconSingle' />
                   <p className="ticketDate">{selectedDate}</p>
+                  <MdOutlineTimer className='IconSingle__DateTime' />
+                  <p className="ticketDate">00:00</p>
                 </div>
-
               }
 
               <div className='chooseDateItems'>
@@ -101,7 +105,11 @@ function ChooseDate() {
             <h3>Les heures disponibles</h3>
           </div>
           <div className="timeButtonSection">
-            <button className='buttonTime'>17:00</button>
+            {data.times
+            .filter((dt)=>dt.date.includes(selectedDate))
+            .map((time, index)=>(
+            <label key={index} className='buttonTime' htmlFor="">{time.hour}</label>
+            ))}
           </div>
         </div>
       </div>
