@@ -1,0 +1,60 @@
+.ActivitySingleImageImagesContainer {
+    flex: 6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ActivitySingleImageImgWrapper {
+    width: 33%;
+    border-radius: 5px;
+}
+
+.ActivitySingleImageImg {
+    width: 250px;
+    height: 170px;
+    object-fit: cover;
+}
+
+.ActivitySingleImageResume {
+    padding: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(252, 226, 227, 39%);
+
+}
+
+
+.ActivitySingleImageLocationDuration {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.LocationDurationItem {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.IconSingle {
+    font-size: 1.3rem;
+    color: var(--color-red);
+}
+
+.singleCategory {
+    text-align: center;
+    justify-content: center;
+    margin-top: 3%;
+    opacity: 0.8;
+}
+
+.singleCategory>hr {
+    margin: 0;
+}
+

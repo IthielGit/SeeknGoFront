@@ -12,8 +12,6 @@ import ChooseDate from './ChooseDate/ChooseDate';
 import ValidPersonalInfo from './ValidPersonalInfo/ValidPersonalInfo';
 
 
-
-
 export {
   Header,
   Searchbar,
