@@ -1,8 +1,20 @@
 import React from 'react'
+import { ActivitySingleImage, TicketResume,InfoValidation } from '../../components';
 
-function ValidPersonalInfo() {
+function ValidPersonalInfo({ formData, setFormData }) {
   return (
-    <div>ValidPersonalInfo</div>
+    <div className="">
+      {/* top content */}
+      <div className="activityImageAndTicketSection">
+        <ActivitySingleImage formData={formData} setFormData={setFormData} />
+        <TicketResume formData={formData} setFormData={setFormData} />
+      </div>
+
+      {/* bottom content */}
+      <div>
+        <InfoValidation formData={formData} setFormData={setFormData}/>
+      </div>
+    </div>
   )
 }
 

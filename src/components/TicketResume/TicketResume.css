@@ -28,6 +28,28 @@
     font-weight: 700 ;
 }
 
+
+.ticketDatetime {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.IconSingle {
+    font-size: 1.3rem;
+    color: var(--color-red);
+}
+
+.IconSingle__DateTime {
+    font-size: 1.3rem;
+    color: var(--color-red);
+    margin-left: 2rem;
+}
+
+.ticketDate {
+    margin: 0;
+}
+
 .priceOptionsItems{
     display: flex;
     justify-content: space-between;

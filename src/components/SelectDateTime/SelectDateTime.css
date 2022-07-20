@@ -1,0 +1,215 @@
+.chooseDateTimeSection {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
+}
+
+.selectDate {
+    flex: 3;
+    /* background-color: bisque; */
+}
+
+.selectDateTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.datePickerSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+/* datepicker-START */
+
+.react-datepicker {
+    font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+    font-size: 0.8rem;
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+.react-datepicker__header {
+    text-align: center;
+    background-color: #fef4f4;
+    border-bottom: 0px solid #aeaeae;
+    /* border-top-left-radius: 0.3rem; */
+    padding: 11px 0;
+    position: relative;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+    color: #3b3b3b;
+    display: inline-block;
+    width: 1.7rem;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.react-datepicker__day--selected:hover {
+    background-color: #ffffff00;
+}
+
+.react-datepicker__day--selected {
+    border-radius: 0.3rem;
+    background-color: #fef4f469;
+    color: #fff;
+}
+
+.react-datepicker__day--keyboard-selected {
+    border-radius: 0.3rem;
+    background-color: #ce2127;
+    color: #fff;
+}
+
+.react-datepicker__day--keyboard-selected:hover {
+    background-color: #ce2127;
+}
+
+.react-datepicker__day--highlighted {
+    border-radius: 0.3rem;
+    background-color: #219D80;
+    color: #fff;
+}
+
+.react-datepicker__day--highlighted:hover {
+    border-radius: 0.3rem;
+    background-color: #219D80;
+    color: rgb(255, 255, 255);
+}
+/* datePicker---End */
+
+/* datePickerLegend start */
+.datePickerLegend{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    opacity: 0.85;
+}
+
+.datePickerLegend__Items{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.datePickerLegend>span>div{
+    background-color: #219D80;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+}
+
+.datePickerLegend>span>p{
+    margin: 0;
+    margin-left: 2px;
+    font-size: 0.8rem;
+}
+
+.datePickerLegend>span>div.datePickerLegend__divIndispo{
+    background-color: #ce2127;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+}
+/* datePickerLegend end */
+
+
+/* selectTime */
+
+.selectTime {
+    flex: 2;
+    /* background-color: bisque; */
+}
+
+.timeButtonSection {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.buttonTime {
+    background-color: #fef4f4;
+    color: var(--color-black);
+    font-family: var(--font-alt);
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    transition: all .3s;
+    margin-left: 2.5%;
+}
+
+.buttonTime:hover {
+    background-color: var(--color-red);
+    color: var(--color-whitesmoke);
+}
+
+
+
+/* TimeLabelRadio START */
+.timeLabelRadio{
+    position: relative;
+}
+
+        /* hide default radio btn */
+.timeLabelRadio input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.timeCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3rem 1.3rem;
+    background-color: #fef4f4;
+    border-radius: 5px;
+  }
+
+        /* On mouse-over, add a grey background color */
+.timeLabelRadio:hover input ~ .timeCheckmark {
+    background-color: #ccc;
+  }
+
+  .timeLabelRadio input:checked ~ .timeCheckmark {
+    background-color: #ce2127;
+  }
+
+  .timeLabelRadio input:checked ~ .timeCheckmark:hover {
+    color: #fff;
+  }
+
+/* timelabelRadio END */
+
+
+@media screen and (max-width:1150px) {
+    .chooseDateTimeSection {
+        flex-direction: column;
+    }
+
+}

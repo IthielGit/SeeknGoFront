@@ -15,7 +15,7 @@ function ErrorPage() {
                             <ImWarning className='iconWarning' />
                             <h1 class="display-1">404</h1>
                             <h1 class="mb-4">Page introuvable</h1>
-                            <p class="mb-4">Nous sommes désolés, la page que vous avez recherché n'existe pas sur notre site Web ! Allez sur notre page d'accueil pour effectuer une recherche ?</p>
+                            <p class="mb-4">Nous sommes désolés, la page que vous avez recherchée n'existe pas sur notre site Web! <br /> Voulez-vous naviguer vers notre page d'accueil?</p>
                         </div>
                     </div>
                 </div>

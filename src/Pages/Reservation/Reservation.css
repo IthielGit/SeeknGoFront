@@ -82,6 +82,14 @@
 }
 
 
+.activityImageAndTicketSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+
 @media screen and (max-width:2000px){
 
 }
@@ -90,6 +98,13 @@
   .bookingContainer{
     margin: 0 2%;
   }
+
+  
+.activityImageAndTicketSection {
+
+  flex-direction: column;
+
+}
 }
 
 /*Mobile phone*/

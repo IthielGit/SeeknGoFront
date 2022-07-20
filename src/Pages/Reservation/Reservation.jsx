@@ -9,13 +9,14 @@ function Reservation() {
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
         email: "",
-        password: "",
-        confirmPassword: "",
         firstName: "",
         lastName: "",
-        username: "",
-        nationality: "",
-        other: "",
+        telNum: "",
+        activityId: "",
+        selectedDate: "",
+        selectedTime: "",
+        selectedPrice: "",
+        ticketTotalPrice: "",
     });
 
 
@@ -71,7 +72,7 @@ function Reservation() {
                             <button
                                 onClick={() => {
                                     if (page === formTitles.length - 1) {
-                                        alert("Demande de réservation envoyée");
+                                        alert("Demande de réservation envoyée. Vous serez notifiés par email lors de la validation du ticket");
                                         console.log(formData);
                                     } else {
                                         setPage((currPage) => currPage + 1);

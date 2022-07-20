@@ -7,22 +7,11 @@
     position: relative;
 }
 
-
-
-.priceOptionsTicketAndImages {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2.5rem;
-}
-
-
 /* unknown */
-.minPriceMGA{
+.minPriceMGA {
     margin: 0;
     color: var(--color-green);
 }
-
 
 .priceOptionsDetails {
     display: flex;
@@ -33,22 +22,9 @@
 }
 
 
+@media screen and (max-width:2000px) {}
 
-@media screen and (max-width:2000px){
-
-}
-
-@media screen and (max-width:1150px){
-    .priceOptionsTicketAndImages{
-        flex-direction: column;
-        
-    }
-}
+@media screen and (max-width:1150px) {}
 
 /*Mobile phone*/
-@media screen and (max-width:650px){
-    .priceOptionsTicketAndImages{
-        flex-direction: column;
-    }
-}
- 
+@media screen and (max-width:650px) {}

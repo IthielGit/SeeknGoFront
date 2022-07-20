@@ -6,6 +6,10 @@ import SearchItem from './SearchItem/SearchItem';
 import ActivitySingleImage from './ActivitySingleImage/ActivitySingleImage';
 import TicketResume from './TicketResume/TicketResume';
 import SelectTarif from './SelectTarif/SelectTarif';
+import SelectDateTime from './SelectDateTime/SelectDateTime';
+import InfoValidation from './InfoValidation/InfoValidation';
+
+
 
 export {
     Navbar,
@@ -15,6 +19,8 @@ export {
     Footer,
     ActivitySingleImage,
     TicketResume,
-    SelectTarif
+    SelectTarif,
+    SelectDateTime,
+    InfoValidation
 };
   
