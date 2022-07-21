@@ -27,3 +27,11 @@
     line-height: 2rem;
     
 }
+
+@media screen and (max-width:750px) {
+    .howto__img{
+        width: 20rem;
+    }
+}
+
+

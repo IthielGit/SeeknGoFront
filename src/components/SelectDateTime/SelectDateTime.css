@@ -132,6 +132,8 @@
 
 .selectTime {
     flex: 2;
+
+ 
     /* background-color: bisque; */
 }
 
@@ -140,6 +142,7 @@
     justify-content: center;
     padding: 1rem 0;
     margin-bottom: 2rem;
+    margin-left: 2rem;
 }
 
 .buttonTime {

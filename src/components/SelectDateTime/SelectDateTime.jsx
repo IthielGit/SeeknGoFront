@@ -43,24 +43,27 @@ function SelectDateTime({ formData, setFormData }) {
                 <div className="selectDateTitle">
                     <h3>Les heures disponibles</h3>
                 </div>
-                <div className="timeButtonSection">
-                    {/*  Filtering the data.times array to only show the times that match the selected
+                <div className="selectTimeContainer">
+
+                    <div className="timeButtonSection">
+                        {/*  Filtering the data.times array to only show the times that match the selected
                     date. */}
-                    {data.times
-                        .filter((dt) => dt.date.includes(formData.selectedDate))
-                        .map((time, index) => (
-                            <label key={index} class="container timeLabelRadio">
-                                <input
-                                    type="radio"
-                                    name="radioTime"
-                                    value={time.hour}
-                                    checked={time.hour === formData.selectedTime}
-                                    //  onChange={(e) => (formData.setSelectedTime(e.target.value))} />
-                                    onChange={(e) => setFormData({ ...formData, selectedTime: e.target.value })} /> 
-                                {/* display time from mapping */}
-                                <span className="timeCheckmark">{time.hour}</span>
-                            </label>
-                        ))}
+                        {data.times
+                            .filter((dt) => dt.date.includes(formData.selectedDate))
+                            .map((time, index) => (
+                                <label key={index} class="container timeLabelRadio">
+                                    <input
+                                        type="radio"
+                                        name="radioTime"
+                                        value={time.hour}
+                                        checked={time.hour === formData.selectedTime}
+                                        //  onChange={(e) => (formData.setSelectedTime(e.target.value))} />
+                                        onChange={(e) => setFormData({ ...formData, selectedTime: e.target.value })} />
+                                    {/* display time from mapping */}
+                                    <p className="timeCheckmark">{time.hour}</p>
+                                </label>
+                            ))}
+                    </div>
                 </div>
             </div>
         </div>
