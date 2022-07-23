@@ -1,18 +1,11 @@
-import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import React from 'react'
 import { Footer, Navbar, SearchItem, SubHeading } from '../../components'
 import { data } from '../../constants'
 
 
-import './ActivitiesList.css'
+import './MesPrestations.css'
 
-function ActivitiesList() {
-  const location = useLocation();
-
-  const [keywords, setKeywords] = useState(location.state.keywords);
-  const [province, setProvince] = useState(location.state.province);
-
-
+function MesPrestations() {
   return (
     <div>
       <Navbar />
@@ -24,11 +17,11 @@ function ActivitiesList() {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>Mots clés</label>
-              <input type="text" placeholder={keywords} />
+              <input type="text" />
             </div>
             <div className="lsItem">
               <label>Province</label>
-              <select className="" value={province}>
+              <select className="" value="">
                 <option>Province</option>
                 {data.provinces.map((province, index) => (
                   <option key={index} defaultValue={province.title}>{province.title}</option>
@@ -49,8 +42,10 @@ function ActivitiesList() {
         </div>
       </div>
       <Footer />
+      +Planning : date not inline + heure en string
+
     </div>
   )
 }
 
-export default ActivitiesList;
+export default MesPrestations

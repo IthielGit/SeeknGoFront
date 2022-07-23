@@ -53,6 +53,7 @@ function Reservation() {
 
                     <div className="componentStepSection">
                         <div className="componentStepSection_Header">
+                            {/* formTitles index page */}
                             <h3>{formTitles[page]}</h3>
                         </div>
 

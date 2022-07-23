@@ -8,7 +8,8 @@ import TicketResume from './TicketResume/TicketResume';
 import SelectTarif from './SelectTarif/SelectTarif';
 import SelectDateTime from './SelectDateTime/SelectDateTime';
 import InfoValidation from './InfoValidation/InfoValidation';
-
+import MinPriceSection from './MinPriceSection/MinPriceSection';
+import ActivityPricedDescription from './ActivityPricedDescription/ActivityPricedDescription';  
 
 
 export {
@@ -21,6 +22,8 @@ export {
     TicketResume,
     SelectTarif,
     SelectDateTime,
-    InfoValidation
+    InfoValidation,
+    MinPriceSection,
+    ActivityPricedDescription
 };
   

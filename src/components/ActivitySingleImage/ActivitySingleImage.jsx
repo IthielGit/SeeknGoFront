@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { GiDuration } from 'react-icons/gi';
 // import { useNavigate } from 'react-router-dom';
 // import { Footer, Navbar, SubHeading } from '../../components'
 import { ImLocation2 } from "react-icons/im";
-import { MdOutlineTimer } from "react-icons/md";
+import { FaHourglassStart } from "react-icons/fa";
 import { data } from '../../constants';
 
 import './ActivitySingleImage.css';
@@ -22,7 +23,7 @@ function ActivitySingleImage() {
             <span>Rue Rabetrano 112 Analamahitsy, Antananarivo, Madagascar</span>
           </div>
           <div className="LocationDurationItem">
-            <MdOutlineTimer className='IconSingle' />
+            <FaHourglassStart className='IconSingle' />
             <span>1 heure 30 minutes</span>
           </div>
         </div>

@@ -8,13 +8,13 @@
 }
 
 .ActivitySingleImageImgWrapper {
-    width: 33%;
+    width: 100%;
     border-radius: 5px;
 }
 
 .ActivitySingleImageImg {
-    width: 250px;
-    height: 170px;
+    width: 100%;
+    height: 58vh;
     object-fit: cover;
 }
 

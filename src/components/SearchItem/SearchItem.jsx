@@ -7,7 +7,7 @@ function SearchItem() {
 
     const navigate = useNavigate();
 
-    const handleList = ()=>{
+    const handleList = () => {
         navigate("/activity/azerty");
     }
     return (
@@ -22,7 +22,7 @@ function SearchItem() {
                 <span className="siPartenaire">par Niaina Ratsima</span>
                 <span className="siCategory">Bien être</span>
                 <div className="siLocation">
-                    <ImLocation2 className='locationIcon'/>
+                    <ImLocation2 className='locationIcon' />
                     <span className="siLocationText">Rue Rantonirina 52 Andavamamba,
                         Antananarivo, Madagascar
                     </span>
@@ -39,7 +39,20 @@ function SearchItem() {
                     <span className="siTaxOp">A partir de </span>
                     <span className="siPrice">24 000Ar</span>
 
+
+                    <><button className="siCheckButton">Modifier</button>
+                        <button className="siCheckButton">Supprimer</button>
+                    </>
                     <button className="siCheckButton" onClick={handleList}>Plus de détails</button>
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
