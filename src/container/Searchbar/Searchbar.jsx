@@ -19,6 +19,7 @@ function Searchbar({type}) {
   const handleProvince = (e)=>{
     setProvince(e.target.value);
   }
+  
   const handleSearch = () =>{
     navigate("/activities", {state:{keywords,province}});
   };

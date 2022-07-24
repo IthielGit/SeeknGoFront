@@ -9,7 +9,7 @@
 }
 
 
-.form-control {
+.app__wrapper_searchbar>.form-control {
     display: block;
     width: 400px;
     padding: .375rem .75rem;
@@ -26,12 +26,12 @@
     transition: border-color none ease-in-out, box-shadow none ease-in-out;
 }
 
-.form-control:focus {
+.app__wrapper_searchbar>.form-control:focus {
     border-color: none;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0075), 0 0 5px var(--color-red);
 }
 
-.form-select {
+.app__wrapper_searchbar>.form-select {
     display: block;
     width: 400px;
     height: 50px;
@@ -48,7 +48,7 @@
     transition: border-color none ease-in-out, box-shadow none ease-in-out;
 }
 
-.form-select:focus {
+.app__wrapper_searchbar>.form-select:focus {
     border-color: none;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.0075), 0 0 5px var(--color-red);
 }
@@ -114,7 +114,7 @@
         margin: 1rem 0rem;
     }
 
-    .form-control {
+    .app__wrapper_searchbar.form-control {
         width: 60vh;
     }
 
@@ -134,7 +134,7 @@
     }
 
 
-    .form-control {
+    .app__wrapper_searchbar.form-control {
         width: 40vh;
     }
 

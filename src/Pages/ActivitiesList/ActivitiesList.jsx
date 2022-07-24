@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Footer, Navbar, SearchItem, SubHeading } from '../../components'
 import { data } from '../../constants'
 
@@ -16,7 +16,7 @@ function ActivitiesList() {
   return (
     <div>
       <Navbar />
-      <SubHeading title="Résultats" />
+      <SubHeading title="Résultat" />
       <div className="activitiesListContainer">
         <div className="activitiesListWrapper">
 
@@ -36,6 +36,7 @@ function ActivitiesList() {
               </select>
             </div>
             <button>Rechercher</button>
+            <Link to='/activityForm' className="siCheckButton">Créer une nouvelle préstation</Link>
           </div>
 
           <div className="activitiesListResult">

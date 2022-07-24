@@ -40,9 +40,9 @@ function SearchItem() {
                     <span className="siPrice">24 000Ar</span>
 
 
-                    <><button className="siCheckButton">Modifier</button>
+                    <button className="siCheckButton">Modifier</button>
                         <button className="siCheckButton">Supprimer</button>
-                    </>
+                    
                     <button className="siCheckButton" onClick={handleList}>Plus de détails</button>
 
 

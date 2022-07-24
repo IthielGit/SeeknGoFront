@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Contact, About, ErrorPage, Login, SignUp } from "./container/";
+import { Contact, About, ErrorPage, Login, SignUp, ActivityCreationForm } from "./container/";
 import { ActivitiesList, ActivitySingle, HomeMain, Reservation, MesReservations, MesPrestations, MonCompte } from "./Pages";
 
 import "./App.css";
@@ -20,8 +20,8 @@ function App() {
         <Route path="/mesprestations" element={<MesPrestations/>} />
         <Route path="/mesreservations" element={<MesReservations/>} />
         <Route path="/moncompte" element={<MonCompte/>} />
-
-
+        <Route path="/activityForm" element={<ActivityCreationForm/>} />
+        
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

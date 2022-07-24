@@ -10,6 +10,7 @@ import Login from './Login/Login';
 import PriceOptions from "./PriceOptions/PriceOptions";
 import ChooseDate from './ChooseDate/ChooseDate';
 import ValidPersonalInfo from './ValidPersonalInfo/ValidPersonalInfo';
+import ActivityCreationForm from './ActivityCreationForm/ActivityCreationForm';
 
 
 export {
@@ -24,7 +25,8 @@ export {
   ErrorPage,
   PriceOptions,
   ChooseDate,
-  ValidPersonalInfo
+  ValidPersonalInfo,
+  ActivityCreationForm
 };
 
 

@@ -53,17 +53,18 @@
 
 
 
+*/ 
 
 @media screen and (max-width:2000px){
 
 }
 
 @media screen and (max-width:1150px){
-    .activityContainer{
+    .activitySingleContainer{
         margin: 0 3%;
     }
 
-    .activityPlanningAndImages{
+    .activityImageAndTicketSection{
         flex-direction: column;
     }
 
@@ -72,8 +73,8 @@
     }
 }
 
-/*Mobile phone
+/*Mobile phone*/
 @media screen and (max-width:650px){
 
-} */
- 
+} 
+  
