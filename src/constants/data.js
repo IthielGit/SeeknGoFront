@@ -105,6 +105,55 @@ const times = [
 
 ];
 
+const dayTimes = [
+  {
+    hour: '08:00',
+  },
+  {
+    hour: '09:00',
+  },
+  {
+    hour: '10:00',
+  },
+  {
+    hour: '11:00',
+  },
+  {
+    hour: '12:00',
+  },
+  {
+    hour: '13:00',
+  },
+  {
+    hour: '14:00',
+  },
+  {
+    hour: '15:00',
+  },
+  {
+    hour: '16:00',
+  },
+  {
+    hour: '17:00',
+  },
+  {
+    hour: '18:00',
+  },
+  {
+    hour: '19:00',
+  },
+  {
+    hour: '20:00',
+  },
+  {
+    hour: '21:00',
+  },
+  {
+    hour: '22:00',
+  },
+
+];
+
 const photoSample = [
   {
     src: "https://images.unsplash.com/photo-1615657973599-990d6e05fb8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
@@ -113,4 +162,4 @@ const photoSample = [
 ];
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { category, provinces, photoSample, tarifs, times }
+export default { category, provinces, photoSample, tarifs, times, dayTimes }
