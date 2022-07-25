@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { Calendar, DateObject } from "react-multi-date-picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
+import Multiselect from 'multiselect-react-dropdown';
 
 
 
@@ -23,17 +24,17 @@ const ActivityCreationForm = () => {
 
     const [validated, setValidated] = useState(false);
     const [category, setCategory] = useState("");
+    const [province, setProvince] = useState("");
     const [dTimes, setDTimes] = useState("");
 
-    const [dates, setDates] = useState([
-        new Date(),
-        new DateObject({ year: 2020, month: 9, day: 8 }),
-        "December 09 2020",
-        1597994736000 //unix time in milliseconds (August 21 2020)
-    ])
+
 
     const handlecategory = (e) => {
         setCategory(e.target.value);
+    }
+
+    const handleprovince = (e) => {
+        setProvince(e.target.value);
     }
 
 
@@ -56,7 +57,7 @@ const ActivityCreationForm = () => {
 
                 <Form noValidate validated={validated} onSubmit={handleSubmit} className="formContainer">
                     <Row className="mb-3">
-                        <Form.Group as={Col} xl="4" controlId="titreActivityInput">
+                        <Form.Group as={Col} xl="5" controlId="titreActivityInput">
                             <Form.Label>Titre</Form.Label>
                             <Form.Control
                                 required
@@ -65,7 +66,7 @@ const ActivityCreationForm = () => {
                             />
 
                         </Form.Group>
-                        <Form.Group as={Col} xl="3" controlId="categoryActivityInput">
+                        <Form.Group as={Col} xl="4" controlId="categoryActivityInput">
                             <Form.Label>Catégorie</Form.Label>
                             <Form.Select aria-label="Catégorie" onChange={handlecategory} value={category} >
                                 <option>Catégorie</option>
@@ -73,27 +74,25 @@ const ActivityCreationForm = () => {
                                     <option key={index} value={ctgry.title}>{ctgry.title}</option>
                                 ))}
                             </Form.Select>
-
-                        </Form.Group>
-                        <Form.Group as={Col} xl="5" controlId="photoActivityInput">
-                            <Form.Label> Importer une image</Form.Label>
-                            <Form.Control type="file" required accept=".png,.jpg,.jpeg,.webp" />
-                            <Form.Text muted>
-                                *Formats acceptés : .png, .jpg, .jpeg, .webp
-                            </Form.Text>
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} xl="8" controlId="adresseActivityInput">
+                        <Form.Group as={Col} xl="5" controlId="photoActivityInput">
+                            <Form.Label> Importer une image</Form.Label>
+                            <Form.Control type="file" required accept=".png,.jpg,.jpeg,.webp" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="mb-3">
+                        <Form.Group as={Col} xl="5" controlId="adresseActivityInput">
                             <Form.Label>Adresse</Form.Label>
-                            <Form.Control type="text" required />
+                            <Form.Control placeholder="Lot II IK 73 Ter, Analakely" type="text" required />
                             <Form.Control.Feedback type="invalid">
                                 Mettez une adresse valide.
                             </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} xl="4" controlId="provinceActivityInput">
                             <Form.Label>Province</Form.Label>
-                            <Form.Select aria-label="Catégorie" onChange={handlecategory} value={category} >
+                            <Form.Select aria-label="province" onChange={handleprovince} value={province} >
                                 <option> Province </option>
                                 {data.provinces.map((prvce, index) => (
                                     <option key={prvce.id} value={prvce.title}>{prvce.title}</option>
@@ -106,32 +105,79 @@ const ActivityCreationForm = () => {
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group className="mb-12" controlId="ControlDescription" >
+                        <Form.Group  xl="4" controlId="ControlDescription" >
                             <Form.Label>Déscrition</Form.Label>
                             <Form.Control as="textarea" rows={3} required />
                         </Form.Group>
                     </Row>
-                    <Row className="mb-3">
-                        <Form.Group as={Col} xl="4" controlId="adresseActivityInput">
+
+                    <h5>Option de tarifs</h5>
+                    <Row className="mb-3 optionTarif">
+                        <Form.Group as={Col} xl="4" controlId="optionActivityInput">
                             <Form.Label>Option</Form.Label>
                             <Form.Control type="text" required />
                         </Form.Group>
-                        <Form.Group as={Col} xl="4" controlId="adresseActivityInput">
+                        <Form.Group as={Col} xl="2" controlId="prixActivityInput">
                             <Form.Label>Tarif</Form.Label>
-                            <Form.Control type="number" required />
+                            <Form.Control placeholder="20000" type="number" required />
                         </Form.Group>
                         <Form.Group as={Col} xl="2" controlId="dateActivityInput">
                             <Form.Label>Date disponible</Form.Label>
                             <Form.Control type="date" id="dateDispo" name="dateDispo" required />
                         </Form.Group>
-                        <Form.Group as={Col} xl="2" controlId="hoursActivityInput">
+                        <Form.Group as={Col} xl="4" controlId="hoursActivityInput">
                             <Form.Label>Heures disponibles</Form.Label>
-                            <Form.Select aria-label="Catégorie"  multiple={true}>
+                            {/* <Form.Select aria-label="Catégorie"  multiple={true}>
                                 <option>Heures disponibles</option>
                                 {data.dayTimes.map((dtime, index) => (
                                     <option key={index} value={dtime.hour}>{dtime.hour}</option>
                                 ))}
-                            </Form.Select>
+                            </Form.Select> */}
+                            <Multiselect
+                                isObject={false}
+                                onKeyPressFn={function noRefCheck() { }}
+                                onRemove={function noRefCheck() { }}
+                                onSearch={function noRefCheck() { }}
+                                onSelect={function noRefCheck() { }}
+                                options={[
+                                    '00:00',
+                                    '01:00',
+                                    '02:00',
+                                    '03:00',
+                                    '04:00',
+                                    '05:00',
+                                    '03:00',
+                                    '07:00',
+                                    '08:00',
+                                    '09:00',
+                                    '10:00',
+                                    '11:00',
+                                    '12:00',
+                                    '13:00',
+                                    '14:00',
+                                    '15:00',
+                                    '16:00',
+                                    '17:00',
+                                    '18:00',
+                                    '19:00',
+                                    '20:00',
+                                    '21:00',
+                                    '22:00',
+                                    '23:00'
+                                ]}
+                                selectionLimit={{}}
+                                showCheckbox
+                                placeholder=''
+                                style={{
+                                    chips: {
+                                        background: '#CE2127',
+                                        'border-radius': '5px'
+                                    },
+                                    searchBox: {
+                                        backgroundColor: '#FFFFFF'
+                                    }
+                                }}
+                            />
                         </Form.Group>
                     </Row>
                     <Form.Group className="mb-3">
@@ -142,10 +188,10 @@ const ActivityCreationForm = () => {
                             feedbackType="invalid"
                         />
                     </Form.Group>
-                    <div className="dateTimeActivityInput">
+                    {/* <div className="dateTimeActivityInput">
 
                         <div>
-                            {/* date */}
+                            //date
                             <Calendar
                                 className="red"
                                 value={dates}
@@ -160,11 +206,11 @@ const ActivityCreationForm = () => {
                                 ]}
                             />
 
-                            {/* time */}
+                            //time
 
 
                         </div>
-                    </div>
+                    </div>*/}
                     <Button type="submit">Créer la préstation</Button>
                 </Form>
 

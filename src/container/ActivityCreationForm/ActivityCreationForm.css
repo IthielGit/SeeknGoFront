@@ -7,14 +7,11 @@
     gap: 2rem;
  
 }
-.dateTimeActivityInput>div{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    gap: 1rem;
-    background-color: #ce21274f;
-    padding: 1rem;
+
+
+.optionTarif{
+    background-color: rgba(252, 226, 227, 39%);
     border-radius: 5px;
+    padding: 2rem 0;
+    
 }
