@@ -6,7 +6,7 @@ import { data } from '../../constants';
 import './ActivitySingle.css'
 
 function ActivitySingle() {
- 
+
 
 
 
@@ -18,13 +18,14 @@ function ActivitySingle() {
       <div className="activitySingleContainer">
         <div className="activitySingleWrapper">
 
+          <h3>Cours de yoga by SOA</h3>
           <div className="activityImageAndTicketSection">
-            <ActivitySingleImage/>
-            <MinPriceSection/>
+            <ActivitySingleImage />
+            <MinPriceSection />
           </div>
 
           <div className="priceOptionsDetails">
-            <ActivityPricedDescription/>
+            <ActivityPricedDescription />
           </div>
 
         </div>

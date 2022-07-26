@@ -30,10 +30,10 @@ function MesPrestations() {
               </select>
             </div>
             <button>Rechercher</button>
+            <Link to='/activityForm' className="siCheckButton">Créer une nouvelle préstation</Link>
           </div>
 
           <div className="activitiesListResult">
-            <Link to='/activityForm' className="siCheckButton">Créer une nouvelle préstation</Link>
             <SearchItem />
             <SearchItem />
             <SearchItem />

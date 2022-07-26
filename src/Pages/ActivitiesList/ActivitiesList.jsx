@@ -36,7 +36,7 @@ function ActivitiesList() {
               </select>
             </div>
             <button>Rechercher</button>
-            <Link to='/activityForm' className="siCheckButton">Créer une nouvelle préstation</Link>
+            {/* <Link to='/activityForm' className="siCheckButton">Créer une nouvelle préstation</Link> */}
           </div>
 
           <div className="activitiesListResult">

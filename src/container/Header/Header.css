@@ -1,7 +1,6 @@
 .app__header {
     justify-content: space-between;
     align-items: center;
-
     padding: 2rem 0rem;
     min-height: 100vh;
 }
@@ -12,29 +11,28 @@
     padding: 2rem 0rem;
 }
 
-
 .app__header-h1 {
     font-family: var(--font-base);
     color: var(--color-white);
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    line-height: 60px;
-    font-size: 40px;
     text-align: center;
     margin: 5% 0;
     padding: 0 5%;
+    line-height: 3.5rem;
+    font-size: 2rem;
 }
 
 .header__p {
     font-family: var(--font-alt);
     color: var(--color-white);
-    line-height: 3rem;
+    line-height: 2.5rem;
     text-align: center;
     font-weight: 200;
     letter-spacing: 0.04em;
     text-transform: none;
-    font-size: 2rem;
-    padding: 0 1rem;
+    font-size: 1.6rem;
+    margin-top: 0;
 }
 
 
@@ -54,6 +52,7 @@
         text-transform: none;
         font-size: 1rem;
         margin-top: 0;
+        padding: 0 1rem;
     }
 }
 

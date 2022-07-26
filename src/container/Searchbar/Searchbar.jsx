@@ -31,14 +31,13 @@ function Searchbar({type}) {
         <li>
           <input
             type="text"
-            className="form-control"
-            id="floatingInputGrid"
+            className="keywordSearchInput"
             placeholder="Rechercher une activité"
             onChange={handleKeyword}
           />
         </li>
         <li>
-          <select className="form-select" onChange={handleProvince} value={province}  id="floatingSelectGrid">
+          <select className="keywordSearchSelect" onChange={handleProvince} value={province}  id="floatingSelectGrid">
             <option>Province</option>
             {data.provinces.map((province, index)=>(
               <option key={index} value={province.title}>{province.title}</option>

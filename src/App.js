@@ -21,7 +21,7 @@ function App() {
         <Route path="/mesreservations" element={<MesReservations/>} />
         <Route path="/moncompte" element={<MonCompte/>} />
         <Route path="/activityForm" element={<ActivityCreationForm/>} />
-        
+
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

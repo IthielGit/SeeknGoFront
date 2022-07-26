@@ -18,7 +18,7 @@ function SearchItem() {
                 className="siImg"
             />
             <div className="siDesc">
-                <h1 className="siTitle">Spa Jacuzzi privé</h1>
+                <h1 className="siTitle">COURS DE YOGA BY SOA</h1>
                 <span className="siPartenaire">par Niaina Ratsima</span>
                 <span className="siCategory">Bien être</span>
                 <div className="siLocation">

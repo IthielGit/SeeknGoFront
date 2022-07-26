@@ -46,7 +46,7 @@ function Footer() {
                 </li>
                 <li>
                   {" "}
-                  <BsFillTelephoneFill /> + 261 22 234 56
+                  <BsFillTelephoneFill /> + 261 (20) 22 234 56
                 </li>
               </ul>
             </div>
