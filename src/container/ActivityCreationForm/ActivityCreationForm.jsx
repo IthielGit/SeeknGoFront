@@ -19,10 +19,12 @@ import { data } from '../../constants';
 
 const ActivityCreationForm = () => {
 
-    const [validated, setValidated] = useState(false);
-    const [optionTarif, setOptionTarif] = useState([{ titre: "", tarif: "", uniteDeComptage: "", dateDispo: "", heure: [] },])
+    // const [selectHeure, setSelectedHeure] = useState({});
 
-    // const {titre, tarif, uniteDeComptage, dateDispo, heure} = optionTarif[0];
+
+    const [optionTarif, setOptionTarif] = useState([
+        { titre: "", tarif: "", uniteDeComptage: "", dateDispo: "", heure: {} },
+    ])
 
     const [activityCreationForm, setActivityCreationForm] = useState({
         titreActivite: "",
@@ -30,15 +32,27 @@ const ActivityCreationForm = () => {
         imageActivite: "",
         adresseActivite: "",
         provinceActivite: "",
-        escriptionActivite: "",
-        tarifDateHeureActivite: []
+        descriptionActivite: "",
+        tarifDateHeureActivite: {...optionTarif}
     });
 
 
     // handle form change for tarif option
-    let handleFormChange = (event, index) => {
+    let handleOptionTarifChange = (event, index) => {
         let newOptionTarif = [...optionTarif];
         newOptionTarif[index][event.target.name] = event.target.value;
+        setOptionTarif(newOptionTarif);
+    }
+
+    // let handleHourChange = (event, index) => {
+    //     let newHour = {...selectHeure};
+    //     newHour[index] = event
+    //     setSelectedHeure(newHour);
+    // }  
+
+    let handleHourChange = (event, index) => {
+       let newOptionTarif = [...optionTarif];
+        newOptionTarif[index].heure = event;
         setOptionTarif(newOptionTarif);
     }
 
@@ -50,14 +64,14 @@ const ActivityCreationForm = () => {
         });
     }
 
-    //add new tarif option field
+    //add dynamically tarifOption fields
     let addFields = () => {
         let newfield = {
             titre: "",
             tarif: "",
             uniteDeComptage: "",
             dateDispo: "",
-            heure: []
+            heure: {}
         }
         setOptionTarif([...optionTarif, newfield])
     }
@@ -69,15 +83,9 @@ const ActivityCreationForm = () => {
     }
 
     const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-        } else {
-            setValidated(true);
-            // console.log(optionTarif);
-            console.log(activityCreationForm);
-        }
+        event.preventDefault();
+        console.log(optionTarif);
+        console.log(activityCreationForm);
     }
 
     return (
@@ -86,7 +94,7 @@ const ActivityCreationForm = () => {
             <SubHeading title="Details concernant la préstation" />
             <div className="activityCreationFormContainer container">
 
-                <Form noValidate validated={validated} onSubmit={handleSubmit} className="formContainer">
+                <Form onSubmit={handleSubmit} className="formContainer">
                     {/* *************************************************Activity Details****************************************************** */}
                     <Row className="mb-3">
                         <Form.Group as={Col} xl="5">
@@ -98,7 +106,6 @@ const ActivityCreationForm = () => {
                                 defaultValue=""
                                 onChange={handleCreationFormChange}
                             />
-
                         </Form.Group>
                         <Form.Group as={Col} xl="4">
                             <Form.Label>Catégorie</Form.Label>
@@ -127,9 +134,7 @@ const ActivityCreationForm = () => {
                                 required
                                 name='adresseActivite'
                                 onChange={handleCreationFormChange} />
-                            <Form.Control.Feedback type="invalid">
-                                Mettez une adresse valide.
-                            </Form.Control.Feedback>
+
                         </Form.Group>
                         <Form.Group as={Col} xl="4">
                             <Form.Label>Province</Form.Label>
@@ -137,7 +142,7 @@ const ActivityCreationForm = () => {
                                 name="provinceActivite"
                                 aria-label="province"
                                 onChange={handleCreationFormChange}
-                                value={activityCreationForm.provinceActivite}
+
                             >
                                 <option> Province </option>
                                 {data.provinces.map((prvce, index) => (
@@ -164,30 +169,30 @@ const ActivityCreationForm = () => {
                         {optionTarif.map((optionTarifInput, index) => {
                             return (
                                 <Row className="mb-3 optionTarifSection" key={index}>
-                                    <Form.Group as={Col} xl="3" controlId="optionActivityInput">
+                                    <Form.Group as={Col} xl="3">
                                         <Form.Label>Titre</Form.Label>
-                                        <Form.Control type="text" name='option' value={optionTarifInput.option} onChange={event => handleFormChange(event, index)} />
+                                        <Form.Control type="text" name='titre' value={optionTarifInput.titre || ""} onChange={event => handleOptionTarifChange(event, index)} />
                                     </Form.Group>
-                                    <Form.Group as={Col} xl="2" controlId="prixActivityInput">
+                                    <Form.Group as={Col} xl="2">
                                         <Form.Label>Tarif</Form.Label>
-                                        <Form.Control placeholder="20000" name='tarif' type="number" value={optionTarifInput.tarif || ""} onChange={event => handleFormChange(event, index)} />
+                                        <Form.Control placeholder="20000" name='tarif' type="number" value={optionTarifInput.tarif || ""} onChange={event => handleOptionTarifChange(event, index)} />
                                     </Form.Group>
-                                    <Form.Group as={Col} xl="2" controlId="prixActivityInput">
+                                    <Form.Group as={Col} xl="2">
                                         <Form.Label>Unité de comptage</Form.Label>
-                                        <Form.Control placeholder="personne, groupe..." name='uniteDeComptage' type="text" value={optionTarifInput.uniteDeComptage || ""} onChange={event => handleFormChange(event, index)} />
+                                        <Form.Control placeholder="personne, groupe..." name='uniteDeComptage' type="text" value={optionTarifInput.uniteDeComptage || ""} onChange={event => handleOptionTarifChange(event, index)} />
                                     </Form.Group>
-                                    <Form.Group as={Col} xl="2" controlId="dateActivityInput">
+                                    <Form.Group as={Col} xl="2">
                                         <Form.Label>Date disponible</Form.Label>
-                                        <Form.Control type="date" id="dateDispo" name="dateDispo" value={optionTarifInput.dateDispo} onChange={event => handleFormChange(event, index)} />
+                                        <Form.Control type="date" id="dateDispo" name="dateDispo" value={optionTarifInput.dateDispo} onChange={event => handleOptionTarifChange(event, index)} />
                                     </Form.Group>
-                                    <Form.Group as={Col} xl="3" controlId="hoursActivityInput">
+                                    <Form.Group as={Col} xl="3">
                                         <Form.Label>Heures disponibles</Form.Label>
                                         <Multiselect
-                                            name="heure"
+
                                             value={optionTarifInput.heure}
                                             isObject={false}
-                                            onRemove={event => handleFormChange(event, index)}
-                                            onSelect={event => handleFormChange(event, index)}
+                                            onRemove={event => handleHourChange(event, index)}
+                                            onSelect={event => handleHourChange(event, index)}
                                             options={['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '03:00', '07:00', '08:00', '09:00', '10:00', '11:00',
                                                 '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']}
                                             showCheckbox
@@ -210,15 +215,7 @@ const ActivityCreationForm = () => {
                             )
                         })}
                     </div>
-                    {/* *************************************************Form Validation****************************************************** */}
-                    <Form.Group className="mb-3">
-                        <Form.Check
-                            required
-                            label="Je confirme l'authenticité de toutes ces informations"
-                            feedback="Confirmer avant d'envoyer le formulaire"
-                            feedbackType="invalid"
-                        />
-                    </Form.Group>
+
                     <Button type="submit">Créer la préstation</Button>
                 </Form>
 

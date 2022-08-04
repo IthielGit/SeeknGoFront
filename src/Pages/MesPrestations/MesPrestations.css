@@ -51,6 +51,7 @@
     text-transform: uppercase;
     display: inline-block;
     transition: all .3s;
+    text-align: center;
 }
 
 .newPrestaBt:hover{
