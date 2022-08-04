@@ -1,0 +1,60 @@
+.mesPrestBtSection {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mesPrestBtSection>a:hover {
+    color: white;
+}
+
+
+.searchBtMesPresta {
+    background-color: #ce2127d1;
+    color: var(--color-whitesmoke);
+    font-family: var(--font-alt);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    width: 100%;
+    margin-top: 8%;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all .3s;
+}
+
+.searchBtMesPresta:hover{
+    background-color: var(--color-red);
+    transition: all .3s;
+    
+}
+
+.newPrestaBt {
+    background-color:var(--color-green);
+    color: var(--color-whitesmoke);
+    font-family: var(--font-alt);
+    font-weight: 700;
+    letter-spacing: 2px;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all .3s;
+}
+
+.newPrestaBt:hover{
+    background-color: #2f816e;
+    transition: all .3s;
+    
+}

@@ -30,8 +30,10 @@ function MesPrestations() {
                 ))}
               </select>
             </div>
-            <button>Rechercher</button>
-            <Link to='/activityForm' className="siCheckButton">Créer une nouvelle préstation</Link>
+            <div className="mesPrestBtSection">
+              <button className='searchBtMesPresta'>Rechercher</button>
+              <Link to='/activityForm' className="newPrestaBt">Créer une préstation</Link>
+            </div>
           </div>
 
           <div className="activitiesListResult">
@@ -45,7 +47,6 @@ function MesPrestations() {
         </div>
       </div>
       <Footer />
-      +Planning : date not inline + heure en string
 
     </div>
   )

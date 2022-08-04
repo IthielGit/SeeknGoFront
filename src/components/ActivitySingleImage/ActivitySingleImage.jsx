@@ -1,7 +1,4 @@
-import React, { useState } from 'react'
-import { GiDuration } from 'react-icons/gi';
-// import { useNavigate } from 'react-router-dom';
-// import { Footer, Navbar, SubHeading } from '../../components'
+import React, { useState } from 'react';
 import { ImLocation2 } from "react-icons/im";
 import { FaHourglassStart } from "react-icons/fa";
 import { data } from '../../constants';

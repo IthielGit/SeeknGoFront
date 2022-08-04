@@ -9,9 +9,52 @@
 }
 
 
-.optionTarif{
-    background-color: rgba(252, 226, 227, 39%);
+.optionTarifSection{
+    background-color: rgba(252, 226, 227, 0.267);
     border-radius: 5px;
-    padding: 2rem 0;
-    
+
 }
+
+.creerPrestaBtnSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+.newTarifOptBtn{
+    background-color: transparent;
+    border: 1px solid var(--color-red);
+    border-radius: 5px;
+    margin: 1rem 0;
+    padding: 0.08rem 0;
+    width: 50%;
+    font-family: var(--font-alt);
+    font-weight: 500;
+    transition: ease-in-out 0.01s;
+}
+
+.newTarifOptBtn:hover{
+    background-color: var(--color-red);
+    color: whitesmoke;
+}
+
+
+.removeTarifOptBtn{
+    background-color: transparent;
+    border: 1px solid var(--color-red);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 0.08rem 0;
+    width: 50%;
+    font-family: var(--font-alt);
+    font-weight: 500;
+    transition: ease-in-out 0.01s;
+}
+
+.removeTarifOptBtn:hover{
+    background-color: var(--color-red);
+    color: whitesmoke;
+}
+
+

@@ -18,34 +18,49 @@ import './ActivityCreationForm.css'
 import { data } from '../../constants';
 
 const ActivityCreationForm = () => {
-    // const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
-    // const weekDays = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
 
-    const [optionTarif, setOptionTarif] = useState([{ option: "", tarif: "", dateDispo: "", heure: [] }])
+    const [validated, setValidated] = useState(false);
+    const [optionTarif, setOptionTarif] = useState([{ titre: "", tarif: "", uniteDeComptage: "", dateDispo: "", heure: [] },])
 
+    // const {titre, tarif, uniteDeComptage, dateDispo, heure} = optionTarif[0];
+
+    const [activityCreationForm, setActivityCreationForm] = useState({
+        titreActivite: "",
+        categorieActivite: "",
+        imageActivite: "",
+        adresseActivite: "",
+        provinceActivite: "",
+        escriptionActivite: "",
+        tarifDateHeureActivite: []
+    });
+
+
+    // handle form change for tarif option
     let handleFormChange = (event, index) => {
-        // let dataSpread = [...optionTarif];
-        // dataSpread[index][event.target.name] = event.target.value;
-        // setOptionTarif(dataSpread);
         let newOptionTarif = [...optionTarif];
         newOptionTarif[index][event.target.name] = event.target.value;
         setOptionTarif(newOptionTarif);
-        console.log(optionTarif);
     }
 
+
+    let handleCreationFormChange = (e) => {
+        setActivityCreationForm({
+            ...activityCreationForm,
+            [e.target.name]: e.target.value
+        });
+    }
 
     //add new tarif option field
     let addFields = () => {
         let newfield = {
-            option: "",
+            titre: "",
             tarif: "",
+            uniteDeComptage: "",
             dateDispo: "",
             heure: []
         }
         setOptionTarif([...optionTarif, newfield])
     }
-
-
 
     let removeFields = (index) => {
         let data = [...optionTarif];
@@ -53,32 +68,16 @@ const ActivityCreationForm = () => {
         setOptionTarif(data)
     }
 
-    const [validated, setValidated] = useState(false);
-    const [category, setCategory] = useState("");
-    const [province, setProvince] = useState("");
-
-    const handlecategory = (e) => {
-        setCategory(e.target.value);
-    }
-
-    const handleprovince = (e) => {
-        setProvince(e.target.value);
-    }
-
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
+        } else {
+            setValidated(true);
+            // console.log(optionTarif);
+            console.log(activityCreationForm);
         }
-
-        setValidated(true);
-    };
-
-    const [selTime,setSelTime] = useState();
-    let handleTime = (e) => {
-        setSelTime(Array.isArray(e) ? e.map(time => time.value) :[])
-        console.log(selTime);
     }
 
     return (
@@ -88,19 +87,25 @@ const ActivityCreationForm = () => {
             <div className="activityCreationFormContainer container">
 
                 <Form noValidate validated={validated} onSubmit={handleSubmit} className="formContainer">
+                    {/* *************************************************Activity Details****************************************************** */}
                     <Row className="mb-3">
-                        <Form.Group as={Col} xl="5" controlId="titreActivityInput">
+                        <Form.Group as={Col} xl="5">
                             <Form.Label>Titre</Form.Label>
                             <Form.Control
+                                name="titreActivite"
                                 required
                                 type="text"
                                 defaultValue=""
+                                onChange={handleCreationFormChange}
                             />
 
                         </Form.Group>
-                        <Form.Group as={Col} xl="4" controlId="categoryActivityInput">
+                        <Form.Group as={Col} xl="4">
                             <Form.Label>Catégorie</Form.Label>
-                            <Form.Select aria-label="Catégorie" onChange={handlecategory} value={category} >
+                            <Form.Select aria-label="Catégorie"
+                                onChange={handleCreationFormChange}
+                                value={activityCreationForm.categorieActivite}
+                                name="categorieActivite" >
                                 <option>Catégorie</option>
                                 {data.category.map((ctgry, index) => (
                                     <option key={index} value={ctgry.title}>{ctgry.title}</option>
@@ -109,84 +114,87 @@ const ActivityCreationForm = () => {
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} xl="5" controlId="photoActivityInput">
+                        <Form.Group as={Col} xl="5">
                             <Form.Label> Importer une image</Form.Label>
-                            <Form.Control type="file" required accept=".png,.jpg,.jpeg,.webp" />
+                            <Form.Control type="file" required accept=".png,.jpg,.jpeg,.webp" name='imageActivite' />
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} xl="5" controlId="adresseActivityInput">
+                        <Form.Group as={Col} xl="5">
                             <Form.Label>Adresse</Form.Label>
-                            <Form.Control placeholder="Lot II IK 73 Ter, Analakely" type="text" required />
+                            <Form.Control placeholder="Lot II IK 73 Ter, Analakely"
+                                type="text"
+                                required
+                                name='adresseActivite'
+                                onChange={handleCreationFormChange} />
                             <Form.Control.Feedback type="invalid">
                                 Mettez une adresse valide.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} xl="4" controlId="provinceActivityInput">
+                        <Form.Group as={Col} xl="4">
                             <Form.Label>Province</Form.Label>
-                            <Form.Select aria-label="province" onChange={handleprovince} value={province} >
+                            <Form.Select
+                                name="provinceActivite"
+                                aria-label="province"
+                                onChange={handleCreationFormChange}
+                                value={activityCreationForm.provinceActivite}
+                            >
                                 <option> Province </option>
                                 {data.provinces.map((prvce, index) => (
                                     <option key={prvce.id} value={prvce.title}>{prvce.title}</option>
                                 ))}
                             </Form.Select>
-
                             <Form.Control.Feedback type="invalid">
                                 Mettez une province valide.
                             </Form.Control.Feedback>
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group xl="4" controlId="ControlDescription" >
-                            <Form.Label>Déscrition</Form.Label>
-                            <Form.Control as="textarea" rows={3} required />
+                        <Form.Group xl="4" >
+                            <Form.Label>Déscription de l'activité</Form.Label>
+                            <Form.Control as="textarea" rows={3}
+                                name="descriptionActivite"
+                                onChange={handleCreationFormChange}
+                                required />
                         </Form.Group>
                     </Row>
-
+                    {/* *************************************************Tarif Option****************************************************** */}
                     <h5>Option de tarifs</h5>
                     <div>
-                        {optionTarif.map((input, index) => {
+                        {optionTarif.map((optionTarifInput, index) => {
                             return (
-                                <Row className="mb-3 optionTarif" key={index}>
-                                    <Form.Group as={Col} xl="4" controlId="optionActivityInput">
-                                        <Form.Label>Option</Form.Label>
-                                        <Form.Control type="text" name='option' value={input.option} onChange={event => handleFormChange(event, index)} />
+                                <Row className="mb-3 optionTarifSection" key={index}>
+                                    <Form.Group as={Col} xl="3" controlId="optionActivityInput">
+                                        <Form.Label>Titre</Form.Label>
+                                        <Form.Control type="text" name='option' value={optionTarifInput.option} onChange={event => handleFormChange(event, index)} />
                                     </Form.Group>
                                     <Form.Group as={Col} xl="2" controlId="prixActivityInput">
                                         <Form.Label>Tarif</Form.Label>
-                                        <Form.Control placeholder="20000" name='tarif' type="number" value={input.tarif || ""} onChange={event => handleFormChange(event, index)} />
+                                        <Form.Control placeholder="20000" name='tarif' type="number" value={optionTarifInput.tarif || ""} onChange={event => handleFormChange(event, index)} />
+                                    </Form.Group>
+                                    <Form.Group as={Col} xl="2" controlId="prixActivityInput">
+                                        <Form.Label>Unité de comptage</Form.Label>
+                                        <Form.Control placeholder="personne, groupe..." name='uniteDeComptage' type="text" value={optionTarifInput.uniteDeComptage || ""} onChange={event => handleFormChange(event, index)} />
                                     </Form.Group>
                                     <Form.Group as={Col} xl="2" controlId="dateActivityInput">
                                         <Form.Label>Date disponible</Form.Label>
-                                        <Form.Control type="date" id="dateDispo" name="dateDispo" value={input.dateDispo} onChange={event => handleFormChange(event, index)} />
+                                        <Form.Control type="date" id="dateDispo" name="dateDispo" value={optionTarifInput.dateDispo} onChange={event => handleFormChange(event, index)} />
                                     </Form.Group>
-                                    <Form.Group as={Col} xl="4" controlId="hoursActivityInput">
+                                    <Form.Group as={Col} xl="3" controlId="hoursActivityInput">
                                         <Form.Label>Heures disponibles</Form.Label>
-                                        {/* <Form.Select aria-label="Catégorie"  multiple={true}>
-                                <option>Heures disponibles</option>
-                                {data.dayTimes.map((dtime, index) => (
-                                    <option key={index} value={dtime.hour}>{dtime.hour}</option>
-                                ))}
-                            </Form.Select> */}
                                         <Multiselect
                                             name="heure"
+                                            value={optionTarifInput.heure}
                                             isObject={false}
-                                            onKeyPressFn={function noRefCheck() { }}
-                                            onRemove={function noRefCheck() { }}
-                                            onSearch={function noRefCheck() { }}
-                                            onSelect={function noRefCheck() { }}
-                                            onChange={handleTime}
-                                            options={[
-                                                '00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '03:00', '07:00', '08:00', '09:00', '10:00', '11:00',
-                                                '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'
-                                            ]}
-                                            selectionLimit={{}}
+                                            onRemove={event => handleFormChange(event, index)}
+                                            onSelect={event => handleFormChange(event, index)}
+                                            options={['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '03:00', '07:00', '08:00', '09:00', '10:00', '11:00',
+                                                '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00']}
                                             showCheckbox
-                                            placeholder=''
                                             style={{
                                                 chips: {
                                                     background: '#CE2127',
-                                                    'border-radius': '5px'
+                                                    'borderRadius': '5px'
                                                 },
                                                 searchBox: {
                                                     backgroundColor: '#FFFFFF'
@@ -194,46 +202,23 @@ const ActivityCreationForm = () => {
                                             }}
                                         />
                                     </Form.Group>
-                                    <button onClick={addFields}>Add More</button>
-                                    {index ? <button onClick={() => removeFields(index)}>Remove</button> : null}
-
+                                    <div className="creerPrestaBtnSection">
+                                        <button className='newTarifOptBtn' onClick={addFields}>Ajouter une option</button>
+                                        {index ? <button className='removeTarifOptBtn' onClick={() => removeFields(index)}>Supprimer</button> : null}
+                                    </div>
                                 </Row>
-
                             )
                         })}
-
                     </div>
+                    {/* *************************************************Form Validation****************************************************** */}
                     <Form.Group className="mb-3">
                         <Form.Check
                             required
                             label="Je confirme l'authenticité de toutes ces informations"
-                            feedback="Confirmer avant d'envoyer la formulaire"
+                            feedback="Confirmer avant d'envoyer le formulaire"
                             feedbackType="invalid"
                         />
                     </Form.Group>
-                    {/* <div className="dateTimeActivityInput">
-
-                        <div>
-                            //date
-                            <Calendar
-                                className="red"
-                                value={dates}
-                                onChange={setDates}
-                                months={months}
-                                weekDays={weekDays}
-                                format="DD/MM/YYYY"
-
-                                weekStartDayIndex={1}
-                                plugins={[
-                                    <DatePanel />
-                                ]}
-                            />
-
-                            //time
-
-
-                        </div>
-                    </div>*/}
                     <Button type="submit">Créer la préstation</Button>
                 </Form>
 
