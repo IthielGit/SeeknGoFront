@@ -4,10 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-// import InputGroup from 'react-bootstrap/InputGroup';
-// import { Calendar, DateObject } from "react-multi-date-picker";
-// import DatePanel from "react-multi-date-picker/plugins/date_panel";
-// import TimePicker from 'react-multi-date-picker/plugins/time_picker';
 import Multiselect from 'multiselect-react-dropdown';
 
 
@@ -43,12 +39,6 @@ const ActivityCreationForm = () => {
         newOptionTarif[index][event.target.name] = event.target.value;
         setOptionTarif(newOptionTarif);
     }
-
-    // let handleHourChange = (event, index) => {
-    //     let newHour = {...selectHeure};
-    //     newHour[index] = event
-    //     setSelectedHeure(newHour);
-    // }  
 
     let handleHourChange = (event, index) => {
        let newOptionTarif = [...optionTarif];
