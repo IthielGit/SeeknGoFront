@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Multiselect from 'multiselect-react-dropdown';
+import { FaTrashAlt } from "react-icons/fa";
 
 
 
@@ -13,12 +14,10 @@ import "react-multi-date-picker/styles/colors/red.css"
 import './ActivityCreationForm.css'
 import { data } from '../../constants';
 
+
 const ActivityCreationForm = () => {
 
-    // const [selectHeure, setSelectedHeure] = useState({});
-
-
-    const [optionTarif, setOptionTarif] = useState([
+    const [planning, setPlanning] = useState([
         { titre: "", tarif: "", uniteDeComptage: "", dateDispo: "", heure: {} },
     ])
 
@@ -29,21 +28,20 @@ const ActivityCreationForm = () => {
         adresseActivite: "",
         provinceActivite: "",
         descriptionActivite: "",
-        tarifDateHeureActivite: {...optionTarif}
     });
 
 
     // handle form change for tarif option
-    let handleOptionTarifChange = (event, index) => {
-        let newOptionTarif = [...optionTarif];
-        newOptionTarif[index][event.target.name] = event.target.value;
-        setOptionTarif(newOptionTarif);
+    let handleplanningChange = (event, index) => {
+        let newplanning = [...planning];
+        newplanning[index][event.target.name] = event.target.value;
+        setPlanning(newplanning);
     }
 
     let handleHourChange = (event, index) => {
-       let newOptionTarif = [...optionTarif];
-        newOptionTarif[index].heure = event;
-        setOptionTarif(newOptionTarif);
+        let newplanning = [...planning];
+        newplanning[index].heure = event;
+        setPlanning(newplanning);
     }
 
 
@@ -63,18 +61,18 @@ const ActivityCreationForm = () => {
             dateDispo: "",
             heure: {}
         }
-        setOptionTarif([...optionTarif, newfield])
+        setPlanning([...planning, newfield])
     }
 
     let removeFields = (index) => {
-        let data = [...optionTarif];
+        let data = [...planning];
         data.splice(index, 1)
-        setOptionTarif(data)
+        setPlanning(data)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(optionTarif);
+        console.log(planning);
         console.log(activityCreationForm);
     }
 
@@ -156,30 +154,29 @@ const ActivityCreationForm = () => {
                     {/* *************************************************Tarif Option****************************************************** */}
                     <h5>Option de tarifs</h5>
                     <div>
-                        {optionTarif.map((optionTarifInput, index) => {
+                        {planning.map((planningInput, index) => {
                             return (
-                                <Row className="mb-3 optionTarifSection" key={index}>
+                                <Row className="mb-3 planningSection" key={index}>
                                     <Form.Group as={Col} xl="3">
                                         <Form.Label>Titre</Form.Label>
-                                        <Form.Control type="text" name='titre' value={optionTarifInput.titre || ""} onChange={event => handleOptionTarifChange(event, index)} />
+                                        <Form.Control type="text" name='titre' value={planningInput.titre || ""} onChange={event => handleplanningChange(event, index)} />
                                     </Form.Group>
                                     <Form.Group as={Col} xl="2">
                                         <Form.Label>Tarif</Form.Label>
-                                        <Form.Control placeholder="20000" name='tarif' type="number" value={optionTarifInput.tarif || ""} onChange={event => handleOptionTarifChange(event, index)} />
+                                        <Form.Control placeholder="20000" name='tarif' type="number" value={planningInput.tarif || ""} onChange={event => handleplanningChange(event, index)} />
                                     </Form.Group>
                                     <Form.Group as={Col} xl="2">
                                         <Form.Label>Unité de comptage</Form.Label>
-                                        <Form.Control placeholder="personne, groupe..." name='uniteDeComptage' type="text" value={optionTarifInput.uniteDeComptage || ""} onChange={event => handleOptionTarifChange(event, index)} />
+                                        <Form.Control placeholder="personne, groupe..." name='uniteDeComptage' type="text" value={planningInput.uniteDeComptage || ""} onChange={event => handleplanningChange(event, index)} />
                                     </Form.Group>
                                     <Form.Group as={Col} xl="2">
                                         <Form.Label>Date disponible</Form.Label>
-                                        <Form.Control type="date" id="dateDispo" name="dateDispo" value={optionTarifInput.dateDispo} onChange={event => handleOptionTarifChange(event, index)} />
+                                        <Form.Control type="date" id="dateDispo" name="dateDispo" value={planningInput.dateDispo} onChange={event => handleplanningChange(event, index)} />
                                     </Form.Group>
                                     <Form.Group as={Col} xl="3">
                                         <Form.Label>Heures disponibles</Form.Label>
                                         <Multiselect
-
-                                            value={optionTarifInput.heure}
+                                            value={planningInput.heure}
                                             isObject={false}
                                             onRemove={event => handleHourChange(event, index)}
                                             onSelect={event => handleHourChange(event, index)}
@@ -198,15 +195,15 @@ const ActivityCreationForm = () => {
                                         />
                                     </Form.Group>
                                     <div className="creerPrestaBtnSection">
-                                        <button className='newTarifOptBtn' onClick={addFields}>Ajouter une option</button>
-                                        {index ? <button className='removeTarifOptBtn' onClick={() => removeFields(index)}>Supprimer</button> : null}
+                                        <button className='newTarifOptBtn' onClick={addFields}> + </button>
+                                        {index ? <button className='removeTarifOptBtn' onClick={() => removeFields(index)}> <FaTrashAlt/> </button> : null}
                                     </div>
                                 </Row>
                             )
                         })}
                     </div>
 
-                    <Button type="submit">Créer la préstation</Button>
+                    <Button type="submit" className='activityCreationFormBtn' >Créer la préstation</Button>
                 </Form>
 
             </div>
