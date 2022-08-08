@@ -4,7 +4,7 @@
 }
 
 .login_section .box {
-    background-color: var(--color-whitesmoke);
+    background-color: rgba(118, 118, 118, 0.119);
     margin-bottom: 5%;
     border-radius: 5px;
 }
@@ -69,6 +69,19 @@
     color: #737272;
 }
 
+.passwordContainer{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.passwordContainer>svg{
+    position: absolute;
+    right: 0.4rem;
+    bottom: 1rem;
+    top: 4.2rem;
+    color: #525252;
+}
 .login_section .login-form button {
     padding: 10px 65px;
 }

@@ -23,7 +23,7 @@ function ActivityPricedDescription() {
             <div className="activityDetailsPrice">
                 <h1 className="activityTitle">Les Tarifs</h1>
                 <div className="tarifContainer">
-                    <table class="table table-striped">
+                    <table className="table table-striped">
                         <tbody>
                             {data.tarifs.map((tarif, index) => (
                                 <tr key={index}>

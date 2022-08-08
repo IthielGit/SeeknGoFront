@@ -22,7 +22,7 @@ function SelectTarif() {
         <div className="selectTarifPrice">
             <h1>Les Tarifs</h1>
             <div className="tarifContainer">
-                <table class="table table-striped">
+                <table className="table table-striped">
                     <tbody>
                         {data.tarifs.map((tarif, index) => (
                             <tr key={index}>

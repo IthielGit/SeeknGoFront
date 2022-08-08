@@ -51,7 +51,7 @@ function SelectDateTime({ formData, setFormData }) {
                         {data.times
                             .filter((dt) => dt.date.includes(formData.selectedDate))
                             .map((time, index) => (
-                                <label key={index} class="container timeLabelRadio">
+                                <label key={index} className="container timeLabelRadio">
                                     <input
                                         type="radio"
                                         name="radioTime"
