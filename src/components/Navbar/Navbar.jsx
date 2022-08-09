@@ -43,23 +43,22 @@ const Navbar = () => {
 
         {authority == "PARTENAIRE" && (
           <ul className="app__navbar-links">
-            <li className="p__inter"> <Link to="/">Accueil</Link> </li>
             <li className="p__inter"> <Link to='/mesreservations'>Mes réservations</Link> </li>
             <li className="p__inter"> <Link to='/mesprestations'>Mes préstations</Link> </li>
+            <li className="p__inter"> <Link to="/moncompte">Mon compte</Link> </li>
           </ul>
         )}
 
         {authority == "ADMIN" && (
           <ul className="app__navbar-links">
-            <li className="p__inter"> <Link to="/">Accueil</Link> </li>
-            <li className="p__inter"> <Link to='/about'>A propos de nous</Link> </li>
-            <li className="p__inter"> <Link to='/contact'>Contact</Link> </li>
+            <li className="p__inter"> <Link to="/moncompte">Mon compte</Link> </li>
+            <li className="p__inter"> <Link to='/dashboard'>Tableau de bord</Link> </li>
           </ul>
         )}
 
         {authority == "CLIENT" && (
           <ul className="app__navbar-links">
-            <li className="p__inter"> <Link to="/">Accueil</Link> </li>
+            <li className="p__inter"> <Link to="/moncompte">Mon compte</Link> </li>
             <li className="p__inter"> <Link to='/contact'>Contact</Link> </li>
             <li className="p__inter"> <Link to='/mesreservations'>Mes réservations</Link> </li>
           </ul>
@@ -113,15 +112,14 @@ const Navbar = () => {
 
               {authority == "ADMIN" && (
                 <ul className="app__navbar-smallscreen_links">
-                  <li className="p__inter"> <Link to="/">Accueil</Link> </li>
-                  <li className="p__inter"> <Link to='/about'>A propos de nous</Link> </li>
-                  <li className="p__inter"> <Link to='/contact'>Contact</Link> </li>
+                  <li className="p__inter"> <Link to='/dashboard'>Tableau de bord</Link> </li>
+                  <li className="p__inter"> <Link to="/moncompte">Mon compte</Link> </li>
                 </ul>
               )}
 
               {authority == "CLIENT" && (
                 <ul className="app__navbar-smallscreen_links">
-                  <li className="p__inter"> <Link to="/">Accueil</Link> </li>
+                  <li className="p__inter"> <Link to="/moncompte">Mon compte</Link> </li>
                   <li className="p__inter"> <Link to='/contact'>Contact</Link> </li>
                   <li className="p__inter"> <Link to='/mesreservations'>Mes réservations</Link> </li>
                 </ul>

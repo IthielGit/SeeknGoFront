@@ -5,6 +5,7 @@ import Reservation from './Reservation/Reservation.jsx';
 import MonCompte from './MonCompte/MonCompte';
 import MesPrestations from './MesPrestations/MesPrestations';
 import MesReservations from './MesReservations/MesReservations';
+import DashboardAdmin from './DashboardAdmin/DashboardAdmin';
 
 export {
     HomeMain,
@@ -13,6 +14,7 @@ export {
     Reservation,
     MonCompte,
     MesPrestations,
-    MesReservations
+    MesReservations,
+    DashboardAdmin
 
 };
