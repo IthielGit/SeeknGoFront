@@ -47,6 +47,7 @@
     border-radius: 5px;
     height: 40px;
     transition: border-color none ease-in-out, box-shadow none ease-in-out;
+    margin: 0;
 }
 
 .keywordSearchSelect:focus {

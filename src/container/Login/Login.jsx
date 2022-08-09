@@ -1,22 +1,18 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-// import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { SubHeading, Navbar, Footer } from "../../components";
-// import { useLocalState } from '../../util/useLocalStorage';
+import { addCurrentUser, currentUser$ } from '../../services/rxjs/loggedUser';
 
 import './Login.css'
-import { useNavigate } from 'react-router-dom';
-import { seConnecter } from '../../services/reduxToolkit/UserSlice';
-
 
 function Login() {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
-  const [accountType, setAccountType] = useState("");
+  const navigate = useNavigate();
+  const [allUsers, setAllUsers] = useState([])
+  const [currentUser, setCurrentUser] = useState([]);
 
   // Password toggle handler
   const togglePassword = () => {
@@ -24,71 +20,60 @@ function Login() {
     setPasswordShown(!passwordShown);
   };
 
-
-  const [allUsers, setAllUsers] = useState([])
-
   useEffect(() => {
-
+    //getting all users from the database
     fetch('http://localhost:8080/api/userlist')
       .then((data) => data.json())
       .then((data) => {
-        console.log(data)
-        setAllUsers(data)
+        setAllUsers(...allUsers, data)
       })
+    //RXJS Behaviour listener
+    currentUser$.subscribe((newCurrentUser) => setCurrentUser([...newCurrentUser]));
   }, [])
 
-  //Filter user by email and password in order to get the accountType
-  let filtered = allUsers.filter(item => item.email.includes(email) && item.password.includes(password));
-  const userRole = filtered.map(item => (item.email))
-  console.log("userRole : " + userRole);
+  // console.log("------------------AllUsers---------------------");
+  // console.log(allUsers);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  function handleSignin() {
 
-  const handleSignin = (e) => {
-    e.preventDefault();
-    // console.log("current user" + email + password);
-    const currentUser = {
+    const reqBody = {
       email: email,
-      password: password
-    }
-
-    if (allUsers.length > 0) {
-      axios.post("http://localhost:8080/api/loginUser", currentUser)
-        .then(response => {
-          // console.log(response.data.idUser);
-          dispatch(seConnecter(response.data));
+      password: password,
+    };
+    fetch("http://localhost:8080/login", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "post",
+      body: JSON.stringify(reqBody),
+    })
+      .then((response) => {
+        // console.log(response.status);
+        if (response.status === 200) {
+          // const authority = filtered.map(item => (item.authority.authority))
+          // const userID = currentData.map(item => (item.idUser))
+          // dispatch(seConnecter(filtered[0]));
+          // console.log("response OK");
+          // console.log(reqBody);
+          // console.log("******************AllUserAfterclick**********************");
+          // console.log(allUsers);
+          // console.log("******************FilterafterClick**********************");
+          let dataFilter = allUsers.filter(item => item.email.includes(reqBody.email) && item.password.includes(reqBody.password));
+          addCurrentUser(dataFilter[0]);
           navigate("/");
-        })
-        .catch(error => {
-          alert("Email ou mot de passe erroné!")
-        })
-
-    // } else if (userRole[0] === "Partenaire") {
-    //   axios.post("http://localhost:8080/api/loginUser", currentUser)
-    //     .then(response => {
-    //       // console.log(response.data.idUser);
-    //       dispatch(seConnecter(response.data));
-    //       navigate("/");
-    //     })
-    //     .catch(error => {
-    //       alert("Email ou mot de passe erroné!")
-    //     })
-
-    // } else {
-    //   axios.post("http://localhost:8080/api/loginUser", currentUser)
-    //     .then(response => {
-    //       // console.log(response.data.idUser);
-    //       dispatch(seConnecter(response.data));
-    //       navigate("/");
-    //     })
-    //     .catch(error => {
-    //       alert("Email ou mot de passe erroné!")
-    //     })
-    }
-
+        } else {
+          alert("response error");
+        }
+      })
+      .catch(error => {
+        alert("Identifiant ou mot de passe erroné!")
+      });
   }
 
+
+
+  console.log("******************newCurrrent ures after Click from Behaviour**********************");
+  console.log(currentUser);
 
   return (
     <>

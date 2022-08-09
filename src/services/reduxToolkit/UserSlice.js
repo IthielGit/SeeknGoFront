@@ -17,8 +17,9 @@ const loggedUserSlice = createSlice({
         numNif: null,
         numStat: null,
         numRcs: null,
+        authority: {},
         prestations: [],
-        factureAbnmts: [],
+        factureAbnmts: []
     }
     ,reducers: {
         seConnecter : (state,action) => {
