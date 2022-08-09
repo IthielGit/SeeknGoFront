@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { SubHeading, Navbar, Footer } from "../../components";
 import { addCurrentUser, currentUser$ } from '../../services/rxjs/loggedUser';
 
