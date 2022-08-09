@@ -70,8 +70,6 @@ function Login() {
       });
   }
 
-
-
   console.log("******************newCurrrent ures after Click from Behaviour**********************");
   console.log(currentUser);
 

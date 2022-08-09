@@ -1,4 +1,4 @@
-.app__navbar-container{
+.app__navbar-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -7,10 +7,10 @@
     padding: 2% 1.5%;
 }
 
-.app__navbar{
+.app__navbar {
     width: 95%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     background: var(--color-whitesmoke);
     border-radius: 5px;
@@ -18,89 +18,90 @@
     padding: 0.3rem 2rem;
 }
 
-.app__navbar-logo{
+.app__navbar-logo {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    
+
 }
 
-.app__navbar-logo img{
+.app__navbar-logo img {
     width: 125px;
+    width: 210px;
+    padding-bottom: 0.5rem;
 }
 
-.app__navbar-links{
-    flex:1;
+.app__navbar-links {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:0 0 0 0;
+    margin: 0 0 0 0;
     padding: 0;
 
     list-style: none;
 }
 
-.app__navbar-links li{
+.app__navbar-links li {
     margin: 1rem 0.5rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
-.app__navbar-links li a:hover{
+.app__navbar-links li a:hover {
     color: var(--color-red);
 }
 
-.app__navbar-login{
+.app__navbar-login {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.app__navbar-login a{
-    font-size: 1rem;
-    font-weight: bold;
+.app__navbar-login>a {
+    font-size: 1.02rem;
+    font-weight: 400;
     margin: 0 0.5rem;
-    text-decoration:none;
-    transition : 0.3s ease;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
-.app__navbar-login a:hover{
+.app__navbar-login>a:hover {
     color: var(--color-red);
-    border-bottom: 1px solid var(--color-red) ;
 }
 
-.app__navbar-login{
+.app__navbar-login {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
+
 }
 
 
-.app__navbar-login a{
+.app__navbar-login a {
     margin: 0 1rem;
-    text-decoration:none;
-    transition : 0.3s ease;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
 
-.app__navbar-login a:hover{
-    border-bottom: 1px solid var(--color-red) ;
+.app__navbar-login a:hover {
+    border-bottom: 1px solid var(--color-red);
 }
 
-.app__navbar-login div{
+.app__navbar-login div {
     width: 1px;
     height: 30px;
     background-color: var(--color-darkgray);
 }
 
 
-.app__navbar-smallscreen{
+.app__navbar-smallscreen {
     display: none;
 }
 
-.app__navbar-smallscreen_overlay{
-    position : fixed;
+.app__navbar-smallscreen_overlay {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -115,65 +116,63 @@
 }
 
 
-.app__navbar-smallscreen_overlay .overlay__close{
+.app__navbar-smallscreen_overlay .overlay__close {
     font-size: 27px;
     color: var(--color-black);
     cursor: pointer;
-    
-    position : absolute;
+
+    position: absolute;
     top: 20px;
     right: 20px;
 }
 
-.app__navbar-smallscreen_links{
+.app__navbar-smallscreen_links {
     list-style: none;
     margin: 5rem 0;
     padding: 0;
 }
 
-.app__navbar-smallscreen_links li{
+.app__navbar-smallscreen_links li {
     margin: 2rem;
-    cursor : pointer;
+    cursor: pointer;
     color: var(--color-black);
     font-size: 2rem;
     text-align: center;
     font-family: var(--font-base)
 }
 
-.app__navbar-smallscreen_links a:hover{
+.app__navbar-smallscreen_links a:hover {
     color: var(--color-red);
 }
 
-@media screen and (max-width:2000px){
-    .app__navbar-logo img{
+@media screen and (max-width:2000px) {
+    .app__navbar-logo img {
         width: 210px;
+        padding-bottom: 0.5rem;
     }
 }
 
-@media screen and (max-width:1150px){
-    .app__navbar-links{
+@media screen and (max-width:1150px) {
+    .app__navbar-links {
         display: none;
     }
 
-    .app__navbar-smallscreen{
+    .app__navbar-smallscreen {
         display: flex;
     }
 }
 
 /*Mobile phone*/
-@media screen and (max-width:650px){
-    .app__navbar-login{
+@media screen and (max-width:650px) {
+    .app__navbar-login {
         display: none;
     }
 
-    .app__navbar{
+    .app__navbar {
         padding: 1rem;
     }
 
-    .app__navbar-logo{
+    .app__navbar-logo {
         width: 110px;
     }
 }
- 
-
-

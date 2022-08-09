@@ -77,10 +77,11 @@
 
 .passwordContainer>svg{
     position: absolute;
-    right: 0.4rem;
+    right: 0.7rem;
     bottom: 1rem;
     top: 4.2rem;
-    color: #525252;
+    color: #525252ad;
+    font-size: 1.35rem;
 }
 .login_section .login-form button {
     padding: 10px 65px;

@@ -21,3 +21,12 @@ export const deleteCurrentUser = (id)=>{
 
     currentUser$.next(currentUser);
 }
+
+
+//When the user signs out, its data will be removed from the session
+export const resetCurrentUser = ()=>{
+    let emptyArray = [];
+    currentUser=emptyArray;
+    
+    currentUser$.next(currentUser);
+}
