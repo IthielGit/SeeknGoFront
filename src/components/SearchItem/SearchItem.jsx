@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ImLocation2 } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
+import { currentUser$ } from '../../services/rxjs/loggedUser';
 
 import './SearchItem.css'
 function SearchItem() {
-
+    const [currentUser, setCurrentUser] = useState([]);
     const navigate = useNavigate();
 
     const handleList = () => {
         navigate("/activity/azerty");
     }
+
+    useEffect(() => {
+        //RXJS Behaviour listener
+        currentUser$.subscribe((newCurrentUser) => setCurrentUser([...newCurrentUser]));
+    }, [])
+    const authority = currentUser.map(item => (item.authority.authority))
+
     return (
         <div className="searchItem">
             <img
@@ -39,10 +47,13 @@ function SearchItem() {
                     <span className="siTaxOp">A partir de </span>
                     <span className="siPrice">24 000Ar</span>
 
+                    {authority == "PARTENAIRE" && (
+                        <>
+                            <button className="siCheckButton">Modifier</button>
+                            <button className="siCheckButton">Supprimer</button> 
+                        </>
+                        )}
 
-                    <button className="siCheckButton">Modifier</button>
-                        <button className="siCheckButton">Supprimer</button>
-                    
                     <button className="siCheckButton" onClick={handleList}>Plus de détails</button>
 
 

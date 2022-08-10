@@ -7,9 +7,10 @@ import images from '../../constants/images'
 import './Navbar.css';
 
 const Navbar = () => {
-
+/* TSY HOVAINA "===" ILAY "==" REHETRA IZAY MISY ERROR */
   const [currentUser, setCurrentUser] = useState([]);
   const [toggleMenu, setToggleMenu] = useState(false);
+  
 
   useEffect(() => {
     //RXJS Behaviour listener
