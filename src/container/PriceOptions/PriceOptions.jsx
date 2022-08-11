@@ -6,16 +6,8 @@ import { ActivitySingleImage, TicketResume, SelectTarif } from '../../components
 
 
 import './PriceOptions.css'
-function PriceOptions({formData, setFormData}) {
-
-  let listPrices = [];
-  // eslint-disable-next-line no-unused-vars
-  let priceToArray = data.tarifs.forEach((item) => { listPrices.push(item.prix); }
-  )
-  let minPrice = Math.min(...listPrices);
-  // eslint-disable-next-line no-unused-vars
-  const minPriceAriary = minPrice.toLocaleString('fr-FR', { style: 'currency', currency: 'MGA' });
-
+function PriceOptions({ formData, setFormData }) {
+// selection des prix pour la résa
   return (
     <div className="priceOptionsWrapper">
 

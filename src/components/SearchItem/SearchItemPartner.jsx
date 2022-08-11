@@ -46,7 +46,24 @@ function SearchItem() {
                 <div className="siDetailTexts">
                     <span className="siTaxOp">A partir de </span>
                     <span className="siPrice">24 000Ar</span>
+
+                    {authority == "PARTENAIRE" && (
+                        <>
+                            <button className="siCheckButton">Modifier</button>
+                            <button className="siCheckButton">Supprimer</button> 
+                        </>
+                        )}
+
                     <button className="siCheckButton" onClick={handleList}>Plus de détails</button>
+
+
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>

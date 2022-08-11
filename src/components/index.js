@@ -3,6 +3,7 @@ import Navbar from './Navbar/Navbar';
 import SubHeading from './SubHeading/SubHeading';
 import SubHeadingDark from './SubHeading/SubHeadingDark';
 import SearchItem from './SearchItem/SearchItem';
+import SearchItemPartner from './SearchItem/SearchItemPartner';
 import ActivitySingleImage from './ActivitySingleImage/ActivitySingleImage';
 import TicketResume from './TicketResume/TicketResume';
 import SelectTarif from './SelectTarif/SelectTarif';
@@ -17,6 +18,7 @@ export {
     SubHeading,
     SubHeadingDark,
     SearchItem,
+    SearchItemPartner,
     Footer,
     ActivitySingleImage,
     TicketResume,

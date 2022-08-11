@@ -5,20 +5,22 @@ import { data } from '../../constants';
 
 import './MinPriceSection.css'
 function MinPriceSection() {
-
+    /* *****************************function to get the min price *********************************** */
     let listPrices = [];
-    // eslint-disable-next-line no-unused-vars
-    let priceToArray = data.tarifs.forEach((item) => { listPrices.push(item.prix); }
-    )
+    data.tarifs.forEach(
+        (item) => {
+            listPrices.push(item.prix);
+        })
     let minPrice = Math.min(...listPrices);
     const minPriceAriary = minPrice.toLocaleString('fr-FR', { style: 'currency', currency: 'MGA' });
+    /* **************************************************************** */
 
     const navigate = useNavigate();
-
     const handleBookSession = () => {
         navigate("/activity/:id/reservation");
     }
 
+    
     return (
         <div className="minPriceContainer">
             <div className="minPriceDetailsTexts">
