@@ -43,8 +43,8 @@ function Reservation() {
                     style={{
                         width: page === 0 ? "33.3%" : page === 1 ? "66.6%" : "100%",
                         backgroundColor: page === 0 ? "#2acfa9" : page === 1 ? "#219D80" : "#1c826a"
-                        }}>
-                            {page === 0 ? <p className='stepDiv'>Etape 1/3</p> : page === 1 ? <p className='stepDiv'>Etape 2/3</p> : <p className='stepDiv'>Etape 3/3</p>}
+                    }}>
+                    {page === 0 ? <p className='stepDiv'>Etape 1/3</p> : page === 1 ? <p className='stepDiv'>Etape 2/3</p> : <p className='stepDiv'>Etape 3/3</p>}
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ function Reservation() {
                             {/* formTitles index page */}
                             <h3>{formTitles[page]}</h3>
                         </div>
-
+                        {/* body of the booking paga */}
                         <div className="componentStepSection_Body">
                             {pageDisplay()}
                         </div>
