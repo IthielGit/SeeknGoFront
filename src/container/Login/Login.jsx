@@ -22,7 +22,7 @@ function Login() {
 
   useEffect(() => {
     //getting all users from the database
-    fetch('http://localhost:8080/api/userlist')
+    fetch('http://localhost:8080/user/list')
       .then((data) => data.json())
       .then((data) => {
         setAllUsers(...allUsers, data)

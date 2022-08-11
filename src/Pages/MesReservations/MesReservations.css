@@ -1,0 +1,40 @@
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: none;
+    color: none;
+}
+
+
+.tableMesResa{
+    width: 95%;
+    padding: 0 2rem;
+}
+
+
+.table-responsive{
+    display: flex;
+    justify-content: center;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color:var(--color-green);
+    border-color:var(--color-green);
+    margin: 0 1rem;
+    width: 6rem;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited{
+
+    background-color:var(--color-green);
+    border-color:var(--color-green);
+
+
+    
+}
+
+
+.btnno {
+    margin: 0rem 0.5rem;
+    width: 6rem;
+}
